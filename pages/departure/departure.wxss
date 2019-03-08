@@ -1,0 +1,30 @@
+/* pages/departure/departure.wxss */
+
+
+.departureContainer > image{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #eeeeee;
+  margin-left: 80rpx;
+  margin-right: 40rpx;
+  margin-top: 10rpx
+}
+.departureContainer{
+  display: flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items: center;
+  padding:30rpx;
+  align-content: flex-start
+}
+.searchBar{
+  border-color:red;
+}
+.navigator-hover {
+  color:rgb(212, 22, 60);
+}
+.alertText{
+  color:red;
+  font-size: 20rpx;
+  margin: 0rpx 0rpx 0rpx 85rpx
+}

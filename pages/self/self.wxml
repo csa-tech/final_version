@@ -1,0 +1,55 @@
+<!--pages/self/self.wxml-->
+<button class="header" size="mini" bindtap="finished">完成</button>
+ 
+<!--image-->
+<view bindtap='setPhotoInfo'>
+    <button wx:if="{{getApp().globalData.imgUrl==null}}" class="user-icon" size="mini" style='background-color: #E62900'></button>
+    <view wx:else>
+      <image  class="user-icon" src="{{imgUrl}}"></image>
+    </view>
+</view>
+<view style='margin-left:290rpx; margin-top:30rpx'>用户名字</view>
+
+<!--账户和密码--> <!--problem:如何储存信息-->
+<view class="top">
+    <view class="inputView">
+        <input type="text" name placeholder="请输入微信名" placeholder-class="ph" bindinput="UserNameInput" />
+    </view>
+    <view class="inputView">
+        <input type="text" placeholder="请输入联系方式" placeholder-class="ph" bindinput="phoneNumInput"/>
+    </view>
+</view>
+
+<!--我的车-->
+<view class="second-half">
+<!--imageOfCar-->
+    <view bindtap='setCarPhotoInfo'>
+      <button wx:if="{{carImgUrl==null}}" class="car-icon" mode="cover">
+      </button>
+      <view wx:else>
+        <image class="user-icon" src="{{carImgUrl}}"></image>
+      </view>
+  
+  </view>
+</view>
+<!--inputBox-->
+<view style='margin-left: 30rpx'>车型</view>
+
+  <view class="inputView2">
+    <input type="text" placeholder="请输入车型    "placeholder-class="ph" bindinput="carTypeInput"/>
+  </view>
+
+<view style='margin-left: 30rpx'>车牌</view>
+
+<view class="inputView2">
+  <input type="text" placeholder="请输入车牌" placeholder-class="ph" bindinput="carLicenseInput"/>
+</view>
+
+<view style='margin-left: 30rpx'>颜色</view>
+
+<view class="inputView2">
+  <input type="text" placeholder="请输入车的颜色" placeholder-class="ph" bindinput="carColorInput"/>
+</view>
+
+<!--how to make the i little icon thing-->
+<button class="termButton" bindtap="term">使用条款</button>

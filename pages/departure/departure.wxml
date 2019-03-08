@@ -1,0 +1,36 @@
+ 
+ <!--pages/departure/departure.wxml-->
+
+<!--自定义组件-->
+
+<van-search  value="{{ departure }}" background="white"
+ placeholder="请输入出发地" 
+  bind:search="onSearch" background="rgb(212, 22, 60)" />
+<text class="alertText" wx:if="{{empty}}">出发地不能为空</text>
+
+<navigator wx:for="{{placeList}}" wx:for-item="item" hover-class='navigator-hover' class="departureContainer" url="../destination/destination?departure={{item.url}}">
+  <image src="{{item.img}}"></image>
+  <view>{{item.name}}</view>
+</navigator>
+      
+<!--navigator url="../destination/destination?departure=Santa Barbara" hover-class='navigator-hover' class="destinationContainer">
+  <image src="/images/SantaBarbara.jpg" class="destinationImage" />
+  <view>圣塔芭芭拉 Santa Barbara</view>
+</navigator>
+<navigator url="../destination/destination?departure=San Francisco" hover-class='navigator-hover' class="destinationContainer">
+  <image src="/images/SanFrancisco.jpg" class="destinationImage" />
+  <view>旧金山 San Francisco</view>
+</navigator>
+<navigator url="../destination/destination?departure=Los Angeles" hover-class='navigator-hover' class="destinationContainer">
+  <image src="/images/LosAngeles.jpg" class="destinationImage" />
+  <view>洛杉矶 Los Angeles</view>
+</navigator>
+<navigator url="../destination/destination?departure=San Diego" hover-class='navigator-hover' class="destinationContainer">
+  <image src="/images/SanDiego.jpg" class="destinationImage" />
+  <view>圣地亚哥 San Diego</view>
+</navigator>
+
+<navigator url="../destination/destination?departure=San Jose" hover-class='navigator-hover' class="destinationContainer">
+  <image src="/images/SanJose.jpg" class="destinationImage" />
+  <view>圣何塞 San Jose</view>
+</navigator-->
