@@ -14,7 +14,7 @@
 <view wx:if="{{idx%2==0}}" class='greyListContainer'>
   <view class="divider"></view>
   <view class="line"> 出发地：{{item.departure}}</view>
-  <view class='line' >目的地: {{item.destination}}</view>
+  <view class='line'> 目的地: {{item.destination}}</view>
 
   <view class='line'>出发日期：{{item.date}}</view>
   <view class='line'> 出发时间：{{item.time}}</view>

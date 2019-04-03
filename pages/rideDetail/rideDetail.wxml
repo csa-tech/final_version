@@ -5,7 +5,7 @@
     <button wx:if="{{!hasUserInfo && canIUse}}"
 open-type="getUserInfo" bindgetuserinfo="getUserInfo">司机姓名</button>
   <view class="section">
-  <textarea placeholder="显示司机姓名" auto-focus />
+  <textarea placeholder="{{drivername}}" auto-focus />
 </view>
 
     <button wx:if="{{!hasUserInfo && canIUse}}"
@@ -56,4 +56,4 @@ bindgetuserinfo="getUserInfo">剩余车上座位数</button>
   </view>
 </view>
 
-
+<navigator url = "../inform/inform">下一页</navigator>

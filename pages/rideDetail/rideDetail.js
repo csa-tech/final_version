@@ -7,8 +7,9 @@ Page({
   onLoad: function (options) {
     this.setData({
       drivername:options.driverName
-    })
 
+    })
+    console.log(options)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

@@ -10,7 +10,6 @@
     "pages/decision/decision",
     "pages/information/information",
     "pages/inform/inform"
-
   ],
   "window":{
     "backgroundTextStyle":"light",
