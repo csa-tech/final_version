@@ -1,59 +1,23 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <button wx:if="{{!hasUserInfo && canIUse}}"
-open-type="getUserInfo" bindgetuserinfo="getUserInfo">司机姓名</button>
-  <view class="section">
-  <textarea placeholder="{{drivername}}" auto-focus />
-</view>
+<view class="margin">
+<view style="margin-top: 40px;">司机姓名</view>
+<text>{{drivername}}</text>
 
-    <button wx:if="{{!hasUserInfo && canIUse}}"
-open-type="getUserInfo"
-bindgetuserinfo="getUserInfo">车辆车型</button>
-    <view class="section">
-    <textarea placeholder="显示车辆车型" auto-focus />
-</view>
-    <button wx:if="{{!hasUserInfo && canIUse}}"
-open-type="getUserInfo"
-bindgetuserinfo="getUserInfo">司机起点</button>
-    <view class="section">
-    <textarea placeholder="显示司机出发起点" auto-focus />
-</view>
+<view style="margin-top: 40px;">车辆车型</view>
+<text>{{cartype}}</text>
 
-    <button wx:if="{{!hasUserInfo && canIUse}}"
-open-type="getUserInfo"
-bindgetuserinfo="getUserInfo">司机出发时间</button>
-    <view class="section">
-    <textarea placeholder="显示司机出发时间" auto-focus />
-</view>
+<view style="margin-top: 40px;">司机起点</view>
+<text>{{departure}}</text>
 
-    <button wx:if="{{!hasUserInfo && canIUse}}"
-open-type="getUserInfo"
-bindgetuserinfo="getUserInfo">司机终点</button>
-    <view class="section">
-    <textarea placeholder="显示司机到达终点" auto-focus />
-</view>
+<view style="margin-top: 40px;">司机出发时间</view>
+<text>{{starttime}}</text>
 
-    <button wx:if="{{!hasUserInfo && canIUse}}"
-open-type="getUserInfo"
-bindgetuserinfo="getUserInfo">价格每人</button>
-    <view class="section">
-    <textarea placeholder="显示rideshare每人价格" auto-focus />
-</view>
+<view style="margin-top: 40px;">司机终点</view>
+<text>{{destination}}</text>
 
-    <button wx:if="{{!hasUserInfo && canIUse}}"
-open-type="getUserInfo"
-bindgetuserinfo="getUserInfo">剩余车上座位数</button>
-  
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>
+<view style="margin-top: 40px;">价格每人</view>
+<text>{{price}}</text>
 
-<navigator url = "../inform/inform">下一页</navigator>
+<view style="margin-top: 40px;">剩余车上座位数</view>
+<text>{{remainseat}}</text>
+
+</view>
