@@ -19,11 +19,13 @@
   <view class='line'>出发日期：{{item.date}}</view>
   <view class='line'> 出发时间：{{item.time}}</view>
   <view class='line'> 
-    <text space="ensp">人数：{{item.numPeople}}/{{item.people}}      </text>
+    <text space="ensp">人数：{{item.num_passenger}}/{{item.people_num}}      </text>
     <image src="/images/myRide/me.png" wx:if="{{item.user_ID == user_ID}}" class="mine" class="image">我发布的           </image>   
     <text  wx:if="{{item.status=='pending' && item.user_ID != user_ID}}" class="pending" >等待回复</text> 
     <!--<image wx:if="{{item.status=='mine'}}"src="/images/me.png" style="width: 50rpx; height: 50rpx" padding="1rpx" margin="1rpx" class="meIcon"/>-->
-    <text wx:if="{{item.status=='responded' && item.user_ID != user_ID}}" class="responded">已回复</text>
+   <!--> <text wx:if="{{item.status=='accepted' && item.user_ID != user_ID}}" class="responded">已回复</text>-->
+    <text wx:if="{{item.status=='accepted'}}" class="responded">已接受</text>
+    <text wx:if="{{item.status=='denied'}}" class="responded">已拒绝</text>
     
   </view>
 </view>
@@ -35,12 +37,13 @@
   <view class='line'>出发日期：{{item.date}}</view>
   <view class='line'> 出发时间：{{item.time}}</view>
   <view class='line'>
-    <view ><text space="ensp">人数：{{item.numPeople}}/{{item.people}}      </text>
+    <view ><text space="ensp">人数：{{item.num_passenger}}/{{item.people_num}}      </text>
     <image src="/images/me.png" wx:if="{{item.user_ID == user_ID}}" class="mine" class="image">我发布的           </image>   
     <text  wx:if="{{item.status=='pending' && item.user_ID != user_ID}}" class="pending" >等待回复</text> 
     <!--<image wx:if="{{item.status=='mine'}}"src="/images/me.png" style="width: 50rpx; height: 50rpx" padding="1rpx" margin="1rpx" class="meIcon"/>-->
-    <text wx:if="{{item.status=='responded' && item.user_ID != user_ID}}" class="responded">已回复</text>
-    
+    <!--<text wx:if="{{item.status=='responded' && item.user_ID != user_ID}}" class="responded">已回复</text>-->
+    <text wx:if="{{item.status=='accepted'}}" class="responded">已接受</text>
+    <text wx:if="{{item.status=='denied'}}" class="responded">已拒绝</text>
     </view>
   </view>
 </view>

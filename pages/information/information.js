@@ -20,7 +20,7 @@ Page({
       { "rideid": "2", "departure": "San Francisco", "destination": "Santa Barbara", "date": "01/07", "time": "8:00 am", "people": "4", "approved_people": "2", "driverName": "He", "carType": "Benz","price": "30" },
       { "rideid": "3", "departure": "Santa Barbara", "destination": "San Diego", "date": "01/10", "time": "6:00 pm",  "people": "4", "approved_people": "2","driverName":"Hell","carType":"Toyota","price":"25" }
       ]*/
-    //var response=[]
+    var response=[]
     that.setData({
       departure: options.departure,
       destination: options.destination,

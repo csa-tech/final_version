@@ -8,7 +8,7 @@ App({
     carType: null,
     name: null,
     phoneNum: null,
-    user_ID: 2
+    user_ID: 1
   },
   onLaunch: function () {
 
