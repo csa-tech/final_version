@@ -9,7 +9,8 @@
     "pages/notification/notification",
     "pages/decision/decision",
     "pages/information/information",
-    "pages/inform/inform"
+    "pages/inform/inform",
+    "pages/newRide/newRide"
   ],
   "window":{
     "backgroundTextStyle":"light",
