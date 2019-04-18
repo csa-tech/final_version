@@ -20,4 +20,7 @@
 <view style="margin-top: 40px;">剩余车上座位数</view>
 <text>{{remainseat}}</text>
 
+<button bindtap="setDisabled">加入Ride</button>
+
 </view>
+<navigator url = "../inform/inform">申请</navigator>

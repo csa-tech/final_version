@@ -21,7 +21,8 @@ Page({
       starttime: options.startTime,
       destination: options.destination,
       price: options.price,
-      remainseat:parseInt(options.people)-parseInt(options.approved_people)
+      remainseat:parseInt(options.people)-parseInt(options.approved_people),
+      rideid:options.rideid
     })
     
     if (app.globalData.userInfo) {
@@ -58,6 +59,11 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  setDisabled: function(){
+    wx.navigateTo({
+      url: '../inform/inform?ride='+ this.data.rideid,
     })
   }
 })
