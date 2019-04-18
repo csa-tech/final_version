@@ -5,13 +5,13 @@
   <image class="user-icon" src="{{imgUrl}}"></image>
 </view>
 
-<view wx:if="{{name==null}}"class="userInfo">用户名: 请输入微信名</view>
+<view wx:if="{{name==null}}"class="userInfo">用户名: 未输入用户名</view>
 <view wx:else class="userInfo">用户名: {{name}}</view>
-<view wx:if="{{carType==null}}"class="userInfo">车型: 请输入车型</view>
+<view wx:if="{{carType==null}}"class="userInfo">车型: 未输入车型</view>
 <view wx:else class="userInfo">车型: {{carType}}</view>
-<view wx:if="{{carLicense==null}}"class="userInfo">车牌: 请输入车牌</view>
+<view wx:if="{{carLicense==null}}"class="userInfo">车牌: 未输入车牌</view>
 <view wx:else class="userInfo">车牌: {{carLicense}}</view>
-<view wx:if="{{carColor==null}}"class="userInfo">颜色: 请输入车的颜色</view>
+<view wx:if="{{carColor==null}}"class="userInfo">颜色: 未输入车的颜色</view>
 <view wx:else class="userInfo">颜色: {{carColor}}</view>
 <view wx:if="{{carImgUrl==null}}"class="userInfo">{{carImgUr}}</view>
 <view wx:else class="userInfo">nothing</view>
