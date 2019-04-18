@@ -54,9 +54,18 @@ Page({
         drop : this.data.drop,
         people_num : this.data.people_num,
         wechat_id : this.data.wechat_id,
-        note : this.data.note
+        note : this.data.note,
+        rideid: this.data.rideid
       },
       success(res){
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000
+        })
+        wx.navigateTo({
+          url: '../departure/departure'
+        })
       }
     })
   },
