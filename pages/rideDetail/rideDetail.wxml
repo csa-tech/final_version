@@ -23,4 +23,3 @@
 <button bindtap="setDisabled">加入Ride</button>
 
 </view>
-<navigator url = "../inform/inform">申请</navigator>
