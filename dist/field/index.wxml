@@ -1,5 +1,3 @@
-<wxs src="../wxs/utils.wxs" module="utils" />
-
 <van-cell
   icon="{{ leftIcon }}"
   title="{{ label }}"
@@ -10,15 +8,12 @@
   custom-style="{{ customStyle }}"
   title-width="{{ titleWidth }}"
   custom-class="van-field"
-  size="{{ size }}"
 >
-  <slot name="left-icon" slot="icon" />
   <slot name="label" slot="title" />
   <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
     <textarea
       wx:if="{{ type === 'textarea' }}"
-      class="input-class {{ utils.bem('field__input', [inputAlign, { disabled, error }]) }}"
-      fixed="{{ fixed }}"
+      class="{{ inputClass }}"
       focus="{{ focus }}"
       value="{{ value }}"
       disabled="{{ disabled || readonly }}"
@@ -26,10 +21,8 @@
       auto-height="{{ autosize }}"
       placeholder="{{ placeholder }}"
       placeholder-style="{{ placeholderStyle }}"
-      placeholder-class="{{ error ? 'van-field__input--error' : 'van-field__placeholder' }}"
+      placeholder-class="{{ error ? 'van-field--error' : '' }}"
       cursor-spacing="{{ cursorSpacing }}"
-      adjust-position="{{ adjustPosition }}"
-      show-confirm-bar="{{ showConfirmBar }}"
       bindinput="onInput"
       bind:blur="onBlur"
       bind:focus="onFocus"
@@ -37,7 +30,7 @@
     />
     <input
       wx:else
-      class="input-class {{ utils.bem('field__input', [inputAlign, { disabled, error }]) }}"
+      class="{{ inputClass }}"
       type="{{ type }}"
       focus="{{ focus }}"
       value="{{ value }}"
@@ -45,11 +38,9 @@
       maxlength="{{ maxlength }}"
       placeholder="{{ placeholder }}"
       placeholder-style="{{ placeholderStyle }}"
-      placeholder-class="{{ error ? 'van-field__input--error' : 'van-field__placeholder' }}"
+      placeholder-class="{{ error ? 'van-field--error' : '' }}"
       confirm-type="{{ confirmType }}"
-      confirm-hold="{{ confirmHold }}"
       cursor-spacing="{{ cursorSpacing }}"
-      adjust-position="{{ adjustPosition }}"
       bindinput="onInput"
       bind:blur="onBlur"
       bind:focus="onFocus"
@@ -76,7 +67,7 @@
       <slot name="button" />
     </view>
   </view>
-  <view wx:if="{{ errorMessage }}" class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
+  <view wx:if="{{ errorMessage }}" class="van-field__error-message">
     {{ errorMessage }}
   </view>
 </van-cell>
