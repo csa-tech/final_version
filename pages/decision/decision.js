@@ -9,7 +9,7 @@ Page({
   acceptFunc: function (e) {
     console.log("已接受");
     wx.request({
-      url: "http://13.56.241.40:3077/ride_acceptted?user_ID=" + String(this.data.decision.user_id),
+      url: "http://13.56.241.40:3077/ride_acceptted?user_ID="+ String(this.data.decision.user_id),
       //parameters = id
       //method: 'PUT',
       data: {

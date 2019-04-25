@@ -2,14 +2,14 @@
 
 
 <scroll-view class = "page-body" scroll-y = "true">
-  <navigator wx:for = "{{notifications}}" wx:for-item = "i" url = "../decision/decision?id={{i.user_ID}}"> 
+  <navigator wx:for = "{{notifications}}" wx:for-item = "i" url = "../decision/decision?id={{i.ride_id}}"> 
     <view class = "item"> 
-      <image class = "page-photo" src = "{{i.photo}}"> </image>
+      <image class = "page-photo" src = "{{i.ImageURL}}"> </image>
       
       <view class = "page-word">
 
-        <text class = "title">{{i.nick_name}}</text>
-        <text class = "idNumber">{{"WeChat ID："+i.wechatID}}</text>
+        <text class = "title">{{i.nick_name1}}</text>
+        <text class = "idNumber">{{"WeChat ID："+i.wechat_id}}</text>
       </view>
     </view>
   </navigator>
