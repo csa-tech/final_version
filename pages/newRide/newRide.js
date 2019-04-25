@@ -3,7 +3,7 @@
 const app = getApp()
 
 Page({
-  date: {
+  data: {
     date: '',
     time: '',
     departure: '',
@@ -43,6 +43,32 @@ Page({
     })
   },
   complete: function () {
+    var people_nu=this.data.num
+    var depar=this.data.departure
+    var dest=this.data.destination
+    var dat=this.data.date
+    var tim=this.data.time
+    var pri=this.data.price
+
+    wx.request({
+      url: 'http://localhost:3000/pushing',
+      data:{
+        //ride_id:'321',
+        approved_people:people_nu,
+        wechat_id:'xxx',
+        note:'hahahaha',
+        status:'pending',
+        departure:depar,
+        destination:dest,
+        people_num:'5',
+        date: dat,
+        time:tim,
+        price:pri
+
+
+      }
+
+    })
     wx.navigateTo({
       url: '../myRide/myRide' // 返回键去index页面
     }
@@ -88,3 +114,5 @@ Page({
     })
   }
 })
+
+
