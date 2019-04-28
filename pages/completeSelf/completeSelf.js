@@ -21,7 +21,7 @@ Page({
   onLoad: function () {
     var $ = this;
     wx.request({
-      url: 'http://localhost:3001/Personal/?user_ID=6',
+      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.user_id),
       method: 'get',
       success: function (res) {
         console.log(res.data)

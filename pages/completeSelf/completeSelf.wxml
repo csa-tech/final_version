@@ -1,6 +1,7 @@
 <!--pages/completeSelf/completeSelf.wxml-->
-<button class="changeInfo" size="mini" bindtap="self">更改信息</button>
+<van-button round plain type="info" class="changeInfo" size="normal" bindtap="self">更改信息</van-button>
 <button wx:if="{{imgUrl==null}}" class="user-icon" size="mini" style='background-color: #E62900'></button>
+<!-- <van-button round plain wx:if="{{imgUrl==null}}" class="user-icon" size="normal"></van-button> -->
 <view wx:else>
   <image class="user-icon" src="{{imgUrl}}"></image>
 </view>
