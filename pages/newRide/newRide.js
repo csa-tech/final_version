@@ -66,14 +66,21 @@ Page({
         price:pri
 
 
+      },
+      success:function(res){
+        console.log(res.data[0]);
+        wx.navigateTo({
+          url: '../myRide/myRide' // 返回键去index页面
+        }
+        )
       }
 
     })
-    wx.navigateTo({
-      url: '../myRide/myRide' // 返回键去index页面
-    }
+   // wx.navigateTo({
+   //   url: '../myRide/myRide' // 返回键去index页面
+   // }
 
-    )
+   // )
 
   },
 
