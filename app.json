@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/departure/departure",
-    "pages/destination/destination",
     "pages/rideDetail/rideDetail",
     "pages/completeSelf/completeSelf",
     "pages/self/self",
