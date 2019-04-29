@@ -22,7 +22,7 @@ Page({
       date: options.date
     })
     wx.request({
-      url: "http://13.56.241.40:3033/ridelist?departure="+that.data.departure+"&destination="+that.data.destination+"date=" + this.data.date, 
+      url: "http://13.56.241.40:3033/ridelist?departure="+that.data.departure+"&destination="+that.data.destination+"&date=" + this.data.date, 
       // url: "http://13.56.241.40:3033/ridelist?departure=SBA&destination=SFO&date=03/03/2019",
 
       data: {},

@@ -32,12 +32,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var today = new Date()
-    this.setData({
-      year: today.getFullYear(),
-      month: (today.getMonth() + 1 < 10 ? '0' + (today.getMonth() + 1) : today.getMonth() + 1),
-      day: today.getDate() < 10 ? '0' + today.getDate() : today.getDate()
-    })
+    // var today = new Date()
+    // this.setData({
+    //   year: today.getFullYear(),
+    //   month: (today.getMonth() + 1 < 10 ? '0' + (today.getMonth() + 1) : today.getMonth() + 1),
+    //   day: today.getDate() < 10 ? '0' + today.getDate() : today.getDate()
+    // })
     
   }, 
   onInput(event) {
@@ -52,7 +52,7 @@ Page({
     this.setData({
       year: Y,
       month: M,
-      day: M
+      day: D
     })
     
   },
@@ -69,9 +69,10 @@ Page({
     })
   },
   onClick(){
+    
     if(this.data.departure != this.data.destination){
       wx.navigateTo({
-        url: '../information/information?departure='+ this.data.departure +"&destination="+this.data.destination+ "&date=" + this.data.year + "/"+this.data.month+"/"+this.data.day,
+        url: '../information/information?departure=' + this.data.departure + "&destination=" + this.data.destination + "&date=" +this.data.month +"/" + this.data.day + "/" + this.data.year ,
       })
     }else{
       Toast("出发地和目的地不能相同")
