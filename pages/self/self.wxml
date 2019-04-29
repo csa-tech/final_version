@@ -1,5 +1,5 @@
 <!--pages/self/self.wxml-->
-<button class="header" size="mini" bindtap="finished">完成</button>
+<van-button round plain hairline type="primary" class="header" size="small" bindtap="finished">完成</van-button>
  
 <!--image-->
 <view bindtap='setPhotoInfo'>
@@ -8,17 +8,25 @@
       <image  class="user-icon" src="{{imgUrl}}"></image>
     </view>
 </view>
-<view style='margin-left:290rpx; margin-top:30rpx'>用户名字</view>
-
 <!--账户和密码--> <!--problem:如何储存信息-->
-<view class="top">
-    <view class="inputView">
-        <input type="text" name placeholder="请输入微信名" placeholder-class="ph" bindinput="UserNameInput" />
-    </view>
-    <view class="inputView">
-        <input type="text" placeholder="请输入联系方式" placeholder-class="ph" bindinput="phoneNumInput"/>
-    </view>
-</view>
+<van-cell-group class="top">
+  <van-field
+    required
+    label="用户名"
+    value="{{ name }}"
+    placeholder="请输入用户名"
+    border="{{ true }}"
+    bind:change="UserNameInput"
+  />
+  <van-field
+    required
+    label="联系方式"
+    value="{{ phoneNum }}"
+    placeholder="请输入联系方式"
+    border="{{ true }}"
+    bind:change="phoneNumInput"
+  />
+</van-cell-group>
 
 <!--我的车-->
 <view class="second-half">
@@ -33,6 +41,44 @@
   </view>
 </view>
 <!--inputBox-->
+<van-cell-group class="top">
+  <van-field
+    required
+    label="车型"
+    value="{{ carType }}"
+    placeholder="请输入车型"
+    border="{{ true }}"
+    bind:change="carTypeInput"
+  />
+  <van-field
+    required
+    label="车牌"
+    value="{{ carLicense }}"
+    placeholder="请输入车牌"
+    border="{{ true }}"
+    bind:change="carLicenseInput"
+  />
+  <van-field
+    required
+    label="颜色"
+    value="{{ carColor }}"
+    placeholder="请输入颜色"
+    border="{{ true }}"
+    bind:change="carColorInput"
+  />
+</van-cell-group>
+<!--how to make the i little icon thing-->
+<van-button round plain hairline type="primary" class="termButton" bindtap="term">使用条款</van-button>
+
+<!-- <view class="top">
+    <view class="inputView">
+        <input type="text" name placeholder="请输入微信名" placeholder-class="ph" bindinput="UserNameInput" />
+    </view>
+    <view class="inputView">
+        <input type="text" placeholder="请输入联系方式" placeholder-class="ph" bindinput="phoneNumInput"/>
+    </view>
+</view> -->
+<!-- 
 <view style='margin-left: 30rpx'>车型</view>
 
   <view class="inputView2">
@@ -49,7 +95,4 @@
 
 <view class="inputView2">
   <input type="text" placeholder="请输入车的颜色" placeholder-class="ph" bindinput="carColorInput"/>
-</view>
-
-<!--how to make the i little icon thing-->
-<button class="termButton" bindtap="term">使用条款</button>
+</view> -->

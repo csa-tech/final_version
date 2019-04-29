@@ -150,7 +150,7 @@ Page({
     app.globalData.carLicense = $.data.carLicense 
     app.globalData.carColor = $.data.carColor
     wx.request({
-      url: 'http://localhost:3001/Personal/?user_ID=6',
+      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.user_id),
       method: 'post',
       data: {
         // UserImgUrl: app.globalData.UserImgUrl,
