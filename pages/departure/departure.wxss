@@ -7,3 +7,9 @@
   justify-content: flex-end;
   margin: 0rpx 30rpx 30rpx 0rpx
 }
+.toolBarClass{
+  background: grey !important;
+}
+.columnClass{
+  height: 50px
+}

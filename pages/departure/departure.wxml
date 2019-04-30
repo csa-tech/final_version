@@ -13,17 +13,17 @@
   <view>{{item.name}}</view>
 </navigator-->
 
-<van-picker columns="{{ columns }}" bind:change="onDepartureChange" title= "选择出发地" show-toolbar= "true" confirm-button-text ="" cancel-button-text="" />
+<van-picker columns="{{ columns }}" bind:change="onDepartureChange" title= "选择出发地" show-toolbar= "true" confirm-button-text ="" cancel-button-text="" toolbar-class = "toolBarClass" column-class = "columnClass" />
 <text>\n</text>
 <text>\n</text>
 <text>\n</text>
-<van-picker columns="{{ columns }}" bind:change="onDestinationChange" title= "选择目的地" show-toolbar= "true" confirm-button-text= "" cancel-button-text =""/>
+<van-picker columns="{{ columns }}" bind:change="onDestinationChange" title= "选择目的地" show-toolbar= "true" confirm-button-text= "" cancel-button-text ="" toolbar-class = "toolBarClass"/>
 <text>\n</text>
 <text>\n</text>
 <text>\n</text>
-<van-datetime-picker type = 'date' value = '{{currentDate}}' min-date = "{{minDate}}" max-date = "{{maxDate}}" bind:input = "onInput" formatter = '{{formatter}}' title = "选择出发时间" bind:confirm = "onConfirm" confirm-button-text = "" cancel-button-text = ""/> 
+<van-datetime-picker type = 'date' value = '{{currentDate}}' min-date = "{{minDate}}" max-date = "{{maxDate}}" bind:input = "onInput" formatter = '{{formatter}}' title = "选择出发时间" bind:confirm = "onConfirm" confirm-button-text = "" cancel-button-text = "" toolbar-class = "toolBarClass"/> 
 <view class = "buttonClass"> 
-  <van-button type = "danger" bind:click ="onClick" >确认</van-button> 
+  <van-button type = "danger" bind:click ="onClick" >搜索</van-button> 
 </view>
 <van-toast id="van-toast" /> 
 
