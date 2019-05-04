@@ -10,9 +10,6 @@
 .toolBarClass{
   background: grey !important;
 }
-.columnClass{
-  height: 50px
-}
 .pickerClass{
   padding: 0px 0px 0px 0px !important;
   margin: 0px 0px 0px 0px !important;
