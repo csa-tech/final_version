@@ -7,8 +7,7 @@
     <text class = "pickUp">接人地点：{{decision.pickUp}}</text>
     <text class = "dropOff">送人地点：{{decision.dropOff}}</text>
     <text class = "numPeople">人数：{{decision.num_passenger}}</text>
-    <text class = "comments">备注：{{decision.note}}</text>
-    
+    <text class = "comments">备注：{{decision.note}}</text>  
   </view>
 
   

@@ -40,4 +40,4 @@
 <!--Testing navigators-->
 <navigator url = "../information/information?departure=Los Angeles&destination=Santa Barbara">行程列表</navigator>
 <navigator url="../rideDetail/rideDetail?rideid=3&driverName=Gauchos&carType=Nissan&time=2019-09-28&departure=Los Angeles&destination=Santa Barbara&price=30&startTime=9am&remainSeat=2&people=4&approved_people=1">行程详情</navigator>
-<navigator url="../inform/inform">行程申请</navigator>
+<navigator url="../inform/inform?rideid=">行程申请</navigator>
