@@ -1,7 +1,0 @@
-{"usingComponents": {
-  "van-search": "/dist/search/index"
-},
-"navigationBarTitleText": "目的地",
-"navigationBarBackgroundColor": "#DC143C",
-"navigationBarTextStyle": "white"
-}

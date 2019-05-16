@@ -1,9 +1,15 @@
 {
   "component":true,
   "usingComponents": {
-    "van-search": "/dist/search/index"
+    "van-search": "/dist/search/index",
+    "van-datetime-picker": "/dist/datetime-picker/index",
+    "van-pop": "/dist/popup/index",
+    "van-actioon-sheet":"/dist/action-sheet/index",
+    "van-picker": "/dist/picker/index",
+    "van-button": "/dist/button/index",
+    "van-toast": "/dist/toast/index"
   },
-  "navigationBarTitleText": "出发地",
+  "navigationBarTitleText": "搜索",
   "navigationBarBackgroundColor": "#DC143C",
   "navigationBarTextStyle": "white"
 }

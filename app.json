@@ -1,7 +1,6 @@
 {
-  "pages":[
+  "pages": [
     "pages/departure/departure",
-    "pages/destination/destination",
     "pages/rideDetail/rideDetail",
     "pages/completeSelf/completeSelf",
     "pages/self/self",
@@ -12,28 +11,32 @@
     "pages/inform/inform",
     "pages/newRide/newRide"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#DC143C",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/departure/departure",
-      "text": "主页",
-      "iconPath": "images/tabBars/home.png",
-      "selectedIconPath": "images/tabBars/home.png"
-    },{
-      "pagePath": "pages/myRide/myRide",
-      "text": "行程",
-      "iconPath": "images/tabBars/trip.png",
-      "selectedIconPath": "images/tabBars/trip.png"
-    },
-    {
-      "pagePath": "pages/completeSelf/completeSelf",
-      "text": "我的",
-      "iconPath": "images/tabBars/profile.png",
-      "selectedIconPath": "images/tabBars/profile.png"
-    }]
-  }
+    "list": [
+      {
+        "pagePath": "pages/departure/departure",
+        "text": "主页",
+        "iconPath": "images/tabBars/home.png",
+        "selectedIconPath": "images/tabBars/home.png"
+      },
+      {
+        "pagePath": "pages/myRide/myRide",
+        "text": "行程",
+        "iconPath": "images/tabBars/trip.png",
+        "selectedIconPath": "images/tabBars/trip.png"
+      },
+      {
+        "pagePath": "pages/completeSelf/completeSelf",
+        "text": "我的",
+        "iconPath": "images/tabBars/profile.png",
+        "selectedIconPath": "images/tabBars/profile.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,4 +1,5 @@
 // pages/information/information.js
+
 Page({
 
   /**
@@ -15,20 +16,15 @@ Page({
    */
   onLoad: function (options) {
     var that=this;
-    /*var response =[
-      { "rideid": "1", "departure": "Santa Barbara", "destination": "Los Angeles", "date": "01/08", "time": "7:00 pm", "people": "4", "approved_people": "2", "driverName": "Hello", "carType": "Nissan", "price": "30"}, 
-      { "rideid": "2", "departure": "San Francisco", "destination": "Santa Barbara", "date": "01/07", "time": "8:00 am", "people": "4", "approved_people": "2", "driverName": "He", "carType": "Benz","price": "30" },
-      { "rideid": "3", "departure": "Santa Barbara", "destination": "San Diego", "date": "01/10", "time": "6:00 pm",  "people": "4", "approved_people": "2","driverName":"Hell","carType":"Toyota","price":"25" }
-      ]*/
-    var response=[]
     that.setData({
       departure: options.departure,
       destination: options.destination,
-      //response: response
+      date: options.date
     })
     wx.request({
-      //url: "http://localhost:3000/ridelist?departure="+that.data.departure+"&destination="+that.data.destination, 
-      url: "http://localhost:3000/ridelist?departure=SB&destination=LA",
+      // url: "http://13.56.241.40:3033/ridelist?departure="+that.data.departure+"&destination="+that.data.destination+"&date=" + this.data.date, 
+      url: "http://13.56.241.40:3033/ridelist?departure=SBA&destination=SFO&date=03/03/2019",
+
       data: {},
       header: {
         'content-type': 'application/json' // 默认值
@@ -42,7 +38,7 @@ Page({
       fail:function(res){
           that.setData({
             success:false,
-            errMsg:res.errMsg
+            errMsg:"Oops, 无符合条件的搜索结果"
          })
       }
     })

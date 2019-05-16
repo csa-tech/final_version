@@ -2,7 +2,7 @@
  <!--pages/departure/departure.wxml-->
 
 <!--自定义组件-->
-
+<!-->
 <van-search  value="{{ departure }}" background="white"
  placeholder="请输入出发地" 
   bind:search="onSearch" background="rgb(212, 22, 60)" />
@@ -11,8 +11,20 @@
 <navigator wx:for="{{placeList}}" wx:for-item="item" hover-class='navigator-hover' class="departureContainer" url="../destination/destination?departure={{item.url}}">
   <image src="{{item.img}}"></image>
   <view>{{item.name}}</view>
-</navigator>
-      
+</navigator-->
+
+<van-picker columns="{{ columns }}" bind:change="onDepartureChange" title= "选择出发地" show-toolbar= "true" confirm-button-text ="" cancel-button-text="" toolbar-class = "toolBarClass"  custom-class = "pickerClass" visible-item-count = "3" />
+
+
+<van-picker columns="{{ columns }}" bind:change="onDestinationChange" title= "选择目的地" show-toolbar= "true" confirm-button-text= "" cancel-button-text ="" toolbar-class = "toolBarClass" visible-item-count = "3"/>
+
+
+<van-datetime-picker type = 'date' value = '{{currentDate}}' min-date = "{{minDate}}" max-date = "{{maxDate}}" bind:input = "onInput" formatter = '{{formatter}}' title = "选择出发时间" bind:confirm = "onConfirm" confirm-button-text = "" cancel-button-text = "" toolbar-class = "toolBarClass" visible-item-count = "3"/> 
+<view class = "buttonClass"> 
+  <van-button type = "danger" bind:click ="onClick" >搜索</van-button> 
+</view>
+<van-toast id="van-toast" /> 
+
 <!--navigator url="../destination/destination?departure=Santa Barbara" hover-class='navigator-hover' class="destinationContainer">
   <image src="/images/SantaBarbara.jpg" class="destinationImage" />
   <view>圣塔芭芭拉 Santa Barbara</view>
@@ -37,7 +49,8 @@
 
 
 
-<!--Testing navigators-->
+<!--Testing navigators>
 <navigator url = "../information/information?departure=Los Angeles&destination=Santa Barbara">行程列表</navigator>
 <navigator url="../rideDetail/rideDetail?rideid=3&driverName=Gauchos&carType=Nissan&time=2019-09-28&departure=Los Angeles&destination=Santa Barbara&price=30&startTime=9am&remainSeat=2&people=4&approved_people=1">行程详情</navigator>
 <navigator url="../inform/inform?rideid=">行程申请</navigator>
+<-->

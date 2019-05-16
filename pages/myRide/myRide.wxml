@@ -3,10 +3,16 @@
 <view class="iconContainer">
   <image src="/images/myRide/me.jpg" style="width: 70rpx; height: 70rpx" class="meIcon"/>
   <view class="iconText">= 我发布的</view>
+  <!-->
   <navigator url="../notification/notification">
     <image class="bellIcon" src="/images/myRide/message.jpg"></image>
   </navigator>
-  
+  <-->
+
+
+  <van-badge-group active="{{active}}" bind:change="onChange">
+    <van-badge title="我的消息" info = '1'/>
+  </van-badge-group>
 </view>
 
 <block wx:for="{{response}}" wx:for-item="item" wx:for-index="idx">
