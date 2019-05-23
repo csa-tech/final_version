@@ -94,17 +94,24 @@ Page({
       sizeType : ['compressed', 'original'],
       sourceType : ['album', 'camera'],
       success: function(res) {
-        var newpath = res.tempFilePaths;
-        wx.uploadFile({
-          url: 'http://13.56.241.40:3014/Personal?user_ID=' + String(app.globalData.user_id),
-          header: { 'content-type': 'multipart/form-data' },
-          filePath: newpath[0],
-          name: '' + String(app.globalData.user_id),
-          formData: {},
-          success(res){
+        var newpath = res.tempFilePaths[0];
+        console.log(newpath);
+        
+        // wx.request({
+        //   url: 'http://13.56.241.40:3014',
+        // })
 
-          }
-        })
+        // console.log(res.tempFiles[0]);
+        // wx.uploadFile({
+        //   url: 'http://13.56.241.40:3014/Personal?user_ID=' + String(app.globalData.user_id),
+        //   header: { 'content-type': 'multipart/form-data' },
+        //   filePath: newpath[0],
+        //   name: '' + String(app.globalData.user_id),
+        //   formData: {},
+        //   success(res){
+
+        //   }
+        // })
         $.setData({ UserImgUrl: newpath })
       },
     })
