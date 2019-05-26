@@ -1,5 +1,7 @@
 // pages/information/information.js
 
+const app = getApp()
+
 Page({
 
   /**
@@ -8,7 +10,8 @@ Page({
   data: {
     departure:'',
     destination:'',
-    success:true
+    success:true,
+    userID: app.globalData.userID
   },
 
   /**
@@ -19,11 +22,13 @@ Page({
     that.setData({
       departure: options.departure,
       destination: options.destination,
-      date: options.date
+      date: options.date,
+      //设置userID
+      userID: app.globalData.userID
     })
     wx.request({
       // url: "http://13.56.241.40:3033/ridelist?departure="+that.data.departure+"&destination="+that.data.destination+"&date=" + this.data.date, 
-      url: "http://13.56.241.40:3033/ridelist?departure=SBA&destination=SFO&date=03/03/2019",
+      url: "http://13.56.241.40:3033/ridelist?departure=SBA&destination=SFO&date=2019-05-25",
 
       data: {},
       header: {

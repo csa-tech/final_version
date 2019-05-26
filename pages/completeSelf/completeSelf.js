@@ -12,7 +12,7 @@ Page({
     carType: app.globalData.carType,
     name: app.globalData.name,
     phoneNum: app.globalData.phoneNum,
-    user_id: app.globalData.user_id
+    user_id: app.globalData.userID
   },
 
   /**
@@ -32,7 +32,7 @@ Page({
         var carType = res.data[0].carType;
         var name = res.data[0].name;
         var phoneNum = res.data[0].phoneNum;
-        var user_id = res.data[0].user_id;
+        var userID = res.data[0].userID;
 
         app.globalData.UserImgUrl = UserImgUrl;
         app.globalData.carColor = carColor;
@@ -41,7 +41,7 @@ Page({
         app.globalData.carType = carType;
         app.globalData.name = name;
         app.globalData.phoneNum = phoneNum;
-        app.globalData.user_id = user_id;
+        app.globalData.userID = userID;
 
         $.setData({
           UserImgUrl: app.globalData.UserImgUrl,
@@ -51,7 +51,7 @@ Page({
           carType: app.globalData.carType,
           name: app.globalData.name,
           phoneNum: app.globalData.phoneNum,
-          user_id: app.globalData.user_id
+          user_id: app.globalData.userID
         })
         
         if (res.data.status == true) {

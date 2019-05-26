@@ -1,7 +1,7 @@
 // pages/departure/departure.js
 import Toast from '../../dist/toast/toast';
 
-
+const app = getApp()
 
 Page({
 
@@ -9,6 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     currentDate: new Date().getTime(),
     minDate : new Date().getTime(),
     maxDate: new Date(2019,9 , 1).getTime(),
@@ -22,6 +25,7 @@ Page({
       }
       return value;
     }, 
+ 
     columns: ["Santa Barbara", "San Francisco", "Los Angeles", "San Diego", "San Jose"],
     departure: "Santa Barbara",
     destination: "Santa Barbara"
@@ -29,17 +33,41 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * app.global.userID callback
    */
-  onLoad: function (options) {
-    // var today = new Date()
-    // this.setData({
-    //   year: today.getFullYear(),
-    //   month: (today.getMonth() + 1 < 10 ? '0' + (today.getMonth() + 1) : today.getMonth() + 1),
-    //   day: today.getDate() < 10 ? '0' + today.getDate() : today.getDate()
-    // })
-    
-  }, 
+  onLoad: function () {
+    console.log(this)
+    if (app.globalData.userID) {
+      this.setData({
+        userInfo: app.globalData.userID,
+        hasUserID: true
+      })
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userIDCallback = res => {
+        this.setData({
+          motto: app.globalData.userID,
+          userInfo: {},
+          hasUserInfo: false,
+          canIUse: wx.canIUse('button.open-type.getUserInfo')
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
+  },
+
+
   onInput(event) {
     
     var date = new Date(event.detail)

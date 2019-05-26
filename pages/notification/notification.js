@@ -1,5 +1,6 @@
 var API_URL = "";
 
+
 Page({
   data: {
     notifications:[]

@@ -13,7 +13,10 @@
   <view>{{item.name}}</view>
 </navigator-->
 
+
+
 <van-picker columns="{{ columns }}" bind:change="onDepartureChange" title= "选择出发地" show-toolbar= "true" confirm-button-text ="" cancel-button-text="" toolbar-class = "toolBarClass"  custom-class = "pickerClass" visible-item-count = "3" />
+
 
 
 <van-picker columns="{{ columns }}" bind:change="onDestinationChange" title= "选择目的地" show-toolbar= "true" confirm-button-text= "" cancel-button-text ="" toolbar-class = "toolBarClass" visible-item-count = "3"/>

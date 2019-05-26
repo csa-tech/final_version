@@ -1,3 +1,5 @@
+const app = getApp()
+
 Page({
 
   /**
@@ -8,7 +10,8 @@ Page({
     drop: null,
     people_num: null,
     wechat_id: null,
-    note: null
+    note: null,
+    userID: app.globalData.userID
   },
 
   pick: function (e) {
@@ -44,18 +47,29 @@ Page({
   // formSubmit: function (e) {
   //   console.log('form发生了submit事件，携带数据为：', e.detail.value)
   // },
+  
+  onLoad: function (options) {
+    rideid: options.rideid
+    // 设置userID
+    console.log(app.globalData.userID)
+    this.setData({
+      userID: app.globalData.userID
+    })
+  },
+
 
   submit: function(e){
     wx.request({
-      url: "http://localhost:3000/users/addRide",
-      method : "POST",
+      url: "http://localhost:3000/667",
+      method : "PUT",
       data:{
         pick : this.data.pick,
         drop : this.data.drop,
         people_num : this.data.people_num,
         wechat_id : this.data.wechat_id,
         note : this.data.note,
-        rideid: this.data.rideid
+        rideid: this.data.rideid,
+        userID: this.data.userID
       },
       success(res){
         wx.showToast({
@@ -63,7 +77,7 @@ Page({
           icon: 'success',
           duration: 2000
         })
-        wx.navigateTo({
+        wx.switchTab({
           url: '../departure/departure'
         })
       }
@@ -72,10 +86,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    rideid: options.rideid
-  },
-
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

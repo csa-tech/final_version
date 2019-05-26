@@ -2,7 +2,7 @@
 <view class='page-body'>
   <view class='page-section'>
     <view class='title'>
-      <view>你想让司机接你的地方:{{pick}}</view>
+      <text>你想让司机接你的地方:</text>
     </view>
     <view class='try'>
       <view class='input'>
@@ -42,7 +42,7 @@
   </view>
   <view class='page-section'>
       <view class='title'>
-      <view>备注:{{note}}</view>
+      <view>备注:</view>
       </view>
     <view class='try'>
     <view class='textarea'>
@@ -52,6 +52,7 @@
     </view>
     </view>
   </view>
+
   <view class='page-section'>
     <button type='primary' bindtap='submit' >提交</button>
   </view>

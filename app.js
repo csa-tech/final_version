@@ -8,7 +8,8 @@ App({
     carType: null,
     name: null,
     phoneNum: null,
-    user_ID: 1
+    userID: null,
+    userInfo: null
   },
   onLaunch: function () {
     var logs = wx.getStorageSync('logs') || []
@@ -21,11 +22,14 @@ App({
         if (res.code) {
           wx.request({
             url: "http://localhost:3000/666",
-            data: res.code,
-            method: 'POST',
+            data: {
+              code: res.code,
+            },
+            method: 'GET',
             success: res => {
               console.log(this)
               this.globalData.userID = res.data
+              console.log('new globalData.userID = ' + this.globalData.userID)
               // this.gd.ID = res.data
               if (this.userIDCallback) {
                 this.userIDCallback(res.data);
@@ -56,11 +60,8 @@ App({
         }
       }
     })
-  },
-  globalData: {
-    userID: 900,
-    userInfo: null
   }
+ 
 
 })
 

@@ -9,7 +9,8 @@ Page({
     departure: '',
     destination: '',
     price: '',
-    num: ''
+    num: '',
+    userID: app.globalData.userID
   },
   //事件处理函数
   date: function (e) {
@@ -42,6 +43,15 @@ Page({
       num: e.detail.value
     })
   },
+
+  onLoad: function (options) {
+    // 更新userID数据，使其与global数据相等
+    console.log(app.globalData.userID)
+    this.setData({
+      userID: app.globalData.userID
+    })
+  },
+
   complete: function () {
     var people_nu=this.data.num
     var depar=this.data.departure
@@ -63,9 +73,8 @@ Page({
         people_num:'5',
         date: dat,
         time:tim,
-        price:pri
-
-
+        price:pri,
+        userID:app.globalData.userID
       },
       success:function(res){
         console.log(res.data[0]);
@@ -82,44 +91,8 @@ Page({
 
    // )
 
-  },
-
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
   }
+
+  
+
 })
-
-

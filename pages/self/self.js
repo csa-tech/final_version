@@ -14,7 +14,8 @@ Page({
     carLicense: app.globalData.carLicense,
     carType: app.globalData.carType,
     name: app.globalData.name,
-    phoneNum: app.globalData.phoneNum
+    phoneNum: app.globalData.phoneNum,
+    user_id: app.globalData.userID
   },
 
   /**
@@ -94,25 +95,10 @@ Page({
       sizeType : ['compressed', 'original'],
       sourceType : ['album', 'camera'],
       success: function(res) {
-        var newpath = res.tempFilePaths[0];
-        console.log(newpath);
-        
-        // wx.request({
-        //   url: 'http://13.56.241.40:3014',
-        // })
-
-        // console.log(res.tempFiles[0]);
-        // wx.uploadFile({
-        //   url: 'http://13.56.241.40:3014/Personal?user_ID=' + String(app.globalData.user_id),
-        //   header: { 'content-type': 'multipart/form-data' },
-        //   filePath: newpath[0],
-        //   name: '' + String(app.globalData.user_id),
-        //   formData: {},
-        //   success(res){
-
-        //   }
-        // })
-        $.setData({ UserImgUrl: newpath })
+        var newpath = res.tempFilePaths;
+        $.setData({
+          UserImgUrl: newpath
+        })
       },
     })
   },
@@ -164,7 +150,7 @@ Page({
     app.globalData.carLicense = $.data.carLicense 
     app.globalData.carColor = $.data.carColor
     wx.request({
-      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.user_id),
+      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.userID),
       method: 'post',
       data: {
         // UserImgUrl: app.globalData.UserImgUrl,
