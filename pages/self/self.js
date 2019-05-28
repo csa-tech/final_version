@@ -14,7 +14,7 @@ Page({
     carLicense: app.globalData.carLicense,
     carType: app.globalData.carType,
     name: app.globalData.name,
-    phoneNum: app.globalData.phoneNum
+    contact: app.globalData.contact
   },
 
   /**
@@ -123,12 +123,12 @@ Page({
     })
     app.globalData.name = $.data.name;
   },
-  phoneNumInput:function (e){
+  contactInput:function (e){
     var $ = this;
     $.setData({
-      phoneNum: e.detail.value
+      contact: e.detail.value
     })
-    app.globalData.phoneNum = $.data.phoneNum;
+    app.globalData.contact = $.data.contact;
   },
   carTypeInput: function (e) {
     var $ = this;
@@ -157,27 +157,15 @@ Page({
   // when finished post data to global data
   finished: function () {
     var $ = this;
+    app.globalData.contact = $.data.contact
     app.globalData.UserImgUrl = $.data.UserImgUrl 
-    app.globalData.carImgUrl = $.data.carImgUrl 
-    app.globalData.name = $.data.name 
-    app.globalData.carType = $.data.carType 
-    app.globalData.carLicense = $.data.carLicense 
-    app.globalData.carColor = $.data.carColor
+    app.globalData.name = $.data.name
     wx.request({
-      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.user_id),
+      url: "http://13.56.241.40:3014/Personal?user_ID=" + 6,//String(app.globalData.user_id),
       method: 'post',
       data: {
-        // UserImgUrl: app.globalData.UserImgUrl,
-        // carImgUrl: app.globalData.carImgUrl,
-        // name: app.globalData.name,
-        // carType: app.globalData.carType,
-        // carLicense: app.globalData.carLicense,
-        // carColor: app.globalData.carColor
         name: app.globalData.name,
-        phoneNum: app.globalData.phoneNum,
-        carType: app.globalData.carType,
-        carLicense: app.globalData.carLicense,
-        carColor: app.globalData.carColor
+        contact: app.globalData.contact,
       },
       success: function (res) {
         if (res.data.status == true) {

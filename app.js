@@ -7,7 +7,7 @@ App({
     carLicense: null,
     carType: null,
     name: null,
-    phoneNum: null,
+    contact: null,
     user_ID: 1
   },
   onLaunch: function () {

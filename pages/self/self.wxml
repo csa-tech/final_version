@@ -21,78 +21,9 @@
   <van-field
     required
     label="联系方式"
-    value="{{ phoneNum }}"
+    value="{{ contact }}"
     placeholder="请输入联系方式"
     border="{{ true }}"
-    bind:change="phoneNumInput"
+    bind:change="contactInput"
   />
 </van-cell-group>
-
-<!--我的车-->
-<view class="second-half">
-<!--imageOfCar-->
-    <view bindtap='setCarPhotoInfo'>
-      <button wx:if="{{carImgUrl==null}}" class="car-icon" mode="cover">
-      </button>
-      <view wx:else>
-        <image class="user-icon" src="{{carImgUrl}}"></image>
-      </view>
-  
-  </view>
-</view>
-<!--inputBox-->
-<van-cell-group class="top">
-  <van-field
-    required
-    label="车型"
-    value="{{ carType }}"
-    placeholder="请输入车型"
-    border="{{ true }}"
-    bind:change="carTypeInput"
-  />
-  <van-field
-    required
-    label="车牌"
-    value="{{ carLicense }}"
-    placeholder="请输入车牌"
-    border="{{ true }}"
-    bind:change="carLicenseInput"
-  />
-  <van-field
-    required
-    label="颜色"
-    value="{{ carColor }}"
-    placeholder="请输入颜色"
-    border="{{ true }}"
-    bind:change="carColorInput"
-  />
-</van-cell-group>
-<!--how to make the i little icon thing-->
-<van-button round plain hairline type="primary" class="termButton" bindtap="term">使用条款</van-button>
-
-<!-- <view class="top">
-    <view class="inputView">
-        <input type="text" name placeholder="请输入微信名" placeholder-class="ph" bindinput="UserNameInput" />
-    </view>
-    <view class="inputView">
-        <input type="text" placeholder="请输入联系方式" placeholder-class="ph" bindinput="phoneNumInput"/>
-    </view>
-</view> -->
-<!-- 
-<view style='margin-left: 30rpx'>车型</view>
-
-  <view class="inputView2">
-    <input type="text" placeholder="请输入车型    "placeholder-class="ph" bindinput="carTypeInput"/>
-  </view>
-
-<view style='margin-left: 30rpx'>车牌</view>
-
-<view class="inputView2">
-  <input type="text" placeholder="请输入车牌" placeholder-class="ph" bindinput="carLicenseInput"/>
-</view>
-
-<view style='margin-left: 30rpx'>颜色</view>
-
-<view class="inputView2">
-  <input type="text" placeholder="请输入车的颜色" placeholder-class="ph" bindinput="carColorInput"/>
-</view> -->

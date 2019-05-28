@@ -11,7 +11,7 @@ Page({
     carLicense: app.globalData.carLicense,
     carType: app.globalData.carType,
     name: app.globalData.name,
-    phoneNum: app.globalData.phoneNum,
+    contact: app.globalData.contact,
     user_id: app.globalData.user_id
   },
 
@@ -31,7 +31,7 @@ Page({
         var carLicense = res.data[0].carLicense;
         var carType = res.data[0].carType;
         var name = res.data[0].name;
-        var phoneNum = res.data[0].phoneNum;
+        var contact = res.data[0].contact;
         var user_id = res.data[0].user_id;
 
         app.globalData.UserImgUrl = UserImgUrl;
@@ -40,7 +40,7 @@ Page({
         app.globalData.carLicense = carLicense;
         app.globalData.carType = carType;
         app.globalData.name = name;
-        app.globalData.phoneNum = phoneNum;
+        app.globalData.contact = contact;
         app.globalData.user_id = user_id;
 
         $.setData({
@@ -50,7 +50,7 @@ Page({
           carLicense: app.globalData.carLicense,
           carType: app.globalData.carType,
           name: app.globalData.name,
-          phoneNum: app.globalData.phoneNum,
+          contact: app.globalData.contact,
           user_id: app.globalData.user_id
         })
         
