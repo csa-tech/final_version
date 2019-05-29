@@ -8,7 +8,7 @@ App({
     carType: null,
     name: null,
     contact: null,
-    user_ID: 1
+    userID: 99
   },
   onLaunch: function () {
     var logs = wx.getStorageSync('logs') || []
@@ -57,10 +57,7 @@ App({
       }
     })
   },
-  globalData: {
-    userID: 900,
-    userInfo: null
-  }
+  
 
 })
 

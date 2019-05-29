@@ -116,38 +116,40 @@ Page({
       },
     })
   },
+  // handler for input "name"
   UserNameInput: function (e) {
     var $ = this;
     $.setData({
-      name: e.detail.value
+      name: e.detail
     })
     app.globalData.name = $.data.name;
   },
+  // handler for input "contact"
   contactInput:function (e){
     var $ = this;
     $.setData({
-      contact: e.detail.value
+      contact: e.detail
     })
     app.globalData.contact = $.data.contact;
   },
   carTypeInput: function (e) {
     var $ = this;
     $.setData({
-      carType: e.detail.value
+      carType: e.detail
     })
     app.globalData.carType = $.data.carType;
   },
   carLicenseInput: function (e) {
     var $ = this;
     $.setData({
-      carLicense: e.detail.value
+      carLicense: e.detail
     })
     app.globalData.carLicense = $.data.carLicense;
   },
   carColorInput: function (e) {
     var $ = this;
     $.setData({
-      carColor: e.detail.value
+      carColor: e.detail
     })
     app.globalData.carColor = $.data.carColor;
   },
@@ -161,7 +163,7 @@ Page({
     app.globalData.UserImgUrl = $.data.UserImgUrl 
     app.globalData.name = $.data.name
     wx.request({
-      url: "http://13.56.241.40:3014/Personal?user_ID=" + 6,//String(app.globalData.user_id),
+      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.user_id),
       method: 'post',
       data: {
         name: app.globalData.name,

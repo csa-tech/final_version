@@ -12,7 +12,7 @@ Page({
     carType: app.globalData.carType,
     name: app.globalData.name,
     contact: app.globalData.contact,
-    user_id: app.globalData.user_id
+    user_id: app.globalData.userID
   },
 
   /**
@@ -21,7 +21,7 @@ Page({
   onLoad: function () {
     var $ = this;
     wx.request({
-      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.user_id),
+      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.userID),
       method: 'get',
       success: function (res) {
         console.log(res.data)
