@@ -24,21 +24,35 @@ Page({
     }, 
     columns: ["Santa Barbara", "San Francisco", "Los Angeles", "San Diego", "San Jose"],
     departure: "Santa Barbara",
-    destination: "Santa Barbara"
-    
+    destination: "Santa Barbara",
+    showDeparture: false,
+    showDestination:false,
+    showTimePicker: false,
+    actions: [
+      {
+        name: "Santa Barbara"
+      },
+      {
+        name: "San Francisco",
+      },
+      {
+        name: "Los Angeles"
+       
+      },
+      {
+        name: "San Diego"
+        
+      },
+      {
+        name: "San Jose"
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var today = new Date()
-    // this.setData({
-    //   year: today.getFullYear(),
-    //   month: (today.getMonth() + 1 < 10 ? '0' + (today.getMonth() + 1) : today.getMonth() + 1),
-    //   day: today.getDate() < 10 ? '0' + today.getDate() : today.getDate()
-    // })
-    
   }, 
   onInput(event) {
     
@@ -54,7 +68,6 @@ Page({
       month: M,
       day: D
     })
-    
   },
   onDepartureChange(event) {
     const { picker, value, index } = event.detail;
@@ -77,5 +90,33 @@ Page({
     }else{
       Toast("出发地和目的地不能相同")
     }
+  },
+  
+  onCloseDeparture(){
+    this.setData({
+      showDeparture:false
+    })
+  },
+  onCloseDestination(){
+    this.setData({
+      showDestination:false
+    })
+  },
+  onCloseTimePicker(){
+    this.setData({
+      showTimePicker: false
+    })
+  },
+  onSelect(event) {
+    console.log(event.detail);
+  },
+  onClickDeparture(){
+    this.setData({showDeparture: !this.data.showDeparture});
+  },
+  onClickDestination() {
+    this.setData({ showDestination: !this.data.showDestination });
+  },
+  onClickTimePicker(){
+    this.setData({ showTimePicker: !this.data.showTimePicker});
   }
 })

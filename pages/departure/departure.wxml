@@ -1,19 +1,6 @@
  
  <!--pages/departure/departure.wxml-->
-
-<!--自定义组件-->
-<!-->
-<van-search  value="{{ departure }}" background="white"
- placeholder="请输入出发地" 
-  bind:search="onSearch" background="rgb(212, 22, 60)" />
-<text class="alertText" wx:if="{{empty}}">出发地不能为空</text>
-
-<navigator wx:for="{{placeList}}" wx:for-item="item" hover-class='navigator-hover' class="departureContainer" url="../destination/destination?departure={{item.url}}">
-  <image src="{{item.img}}"></image>
-  <view>{{item.name}}</view>
-</navigator-->
-
-<van-picker columns="{{ columns }}" bind:change="onDepartureChange" title= "选择出发地" show-toolbar= "true" confirm-button-text ="" cancel-button-text="" toolbar-class = "toolBarClass"  custom-class = "pickerClass" visible-item-count = "3" />
+ <!-- <van-picker columns="{{ columns }}" bind:change="onDepartureChange" title= "选择出发地" show-toolbar= "true" confirm-button-text ="" cancel-button-text="" toolbar-class = "toolBarClass"  custom-class = "pickerClass" visible-item-count = "3" />
 
 
 <van-picker columns="{{ columns }}" bind:change="onDestinationChange" title= "选择目的地" show-toolbar= "true" confirm-button-text= "" cancel-button-text ="" toolbar-class = "toolBarClass" visible-item-count = "3"/>
@@ -24,33 +11,62 @@
   <van-button type = "danger" bind:click ="onClick" >搜索</van-button> 
 </view>
 <van-toast id="van-toast" /> 
-
-<!--navigator url="../destination/destination?departure=Santa Barbara" hover-class='navigator-hover' class="destinationContainer">
-  <image src="/images/SantaBarbara.jpg" class="destinationImage" />
-  <view>圣塔芭芭拉 Santa Barbara</view>
-</navigator>
-<navigator url="../destination/destination?departure=San Francisco" hover-class='navigator-hover' class="destinationContainer">
-  <image src="/images/SanFrancisco.jpg" class="destinationImage" />
-  <view>旧金山 San Francisco</view>
-</navigator>
-<navigator url="../destination/destination?departure=Los Angeles" hover-class='navigator-hover' class="destinationContainer">
-  <image src="/images/LosAngeles.jpg" class="destinationImage" />
-  <view>洛杉矶 Los Angeles</view>
-</navigator>
-<navigator url="../destination/destination?departure=San Diego" hover-class='navigator-hover' class="destinationContainer">
-  <image src="/images/SanDiego.jpg" class="destinationImage" />
-  <view>圣地亚哥 San Diego</view>
-</navigator>
-
-<navigator url="../destination/destination?departure=San Jose" hover-class='navigator-hover' class="destinationContainer">
-  <image src="/images/SanJose.jpg" class="destinationImage" />
-  <view>圣何塞 San Jose</view>
-</navigator-->
+ -->
+<!-- <van-action-sheet
+  show="{{ show }}"
+  actions="{{ actions }}"
+  cancel-text="取消"
+  bind:close="onClose"
+  bind:select="onSelect"
+/>
+<view class="buttonContainerClass">
+<van-button custom-class = "buttonClass" type="default" bind:click="onClick">出发地</van-button>-->
 
 
+<!--Departure popup-->
+<view class="buttonContainerClass">
+  <view class = "row">
+    <van-button type="default" custom-class="buttonClass" bind:click="onClickDeparture">出发地</van-button>
+    <view>{{departure}}</view>
+  </view>
+</view>
+<van-popup
+  show="{{ showDeparture }}"
+  overlay="true"
+  bind:close="onCloseDeparture"
+  custom-class="popupClass"
+>
+  <van-picker columns="{{ columns }}" bind:change="onDepartureChange"   confirm-button-text= "" cancel-button-text = "" visible-item-count = "3"/>
+</van-popup>
 
-<!--Testing navigators>
-<navigator url = "../information/information?departure=Los Angeles&destination=Santa Barbara">行程列表</navigator>
-<navigator url="../rideDetail/rideDetail?rideid=3&driverName=Gauchos&carType=Nissan&time=2019-09-28&departure=Los Angeles&destination=Santa Barbara&price=30&startTime=9am&remainSeat=2&people=4&approved_people=1">行程详情</navigator>
-<navigator url="../inform/inform?rideid=">行程申请</navigator>
-<-->
+<!--destination popup-->
+<view class="buttonContainerClass">
+  <view class = "row">
+    <van-button type="default" custom-class = "buttonClass" bind:click="onClickDestination">目的地</van-button>
+    <view>{{destination}}</view>
+  </view>
+</view>
+
+<van-popup
+  show="{{ showDestination }}"
+  overlay="true"
+  bind:close="onCloseDestination"
+  custom-class="popupClass"
+>
+  <van-picker columns="{{ columns }}" bind:change="onDestinationChange"   confirm-button-text= "" cancel-button-text = "" visible-item-count = "3"/>
+</van-popup>
+
+<!--time picker popup-->
+<view class="buttonContainerClass">
+  <view class = "row">
+    <van-button type="default" custom-class = "buttonClass" bind:click="onClickTimePicker">选择时间</van-button>
+    <view>{{year}}年{{month}}月{{day}}日</view>
+  </view>
+</view>
+<van-popup show="{{showTimePicker}}" overlay="true" bind:close="onCloseTimePicker" custom-class="popupClass">
+<van-datetime-picker type = 'date' value = '{{currentDate}}' min-date = "{{minDate}}" max-date = "{{maxDate}}" bind:input = "onInput" formatter = '{{formatter}}' confirm="onConfirm" cancel-button-text="" confirm-button-text="" show-toolbar= "true" visible-item-count = "3"/> 
+</van-popup>
+<view class = "buttonClass"> 
+  <van-button type = "danger" bind:click ="onClick" >搜索</van-button> 
+</view>
+<van-toast id="van-toast" /> 
