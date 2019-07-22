@@ -63,7 +63,7 @@ Page({
   },
   setDisabled: function(){
     wx.navigateTo({
-      url: '../inform/inform?ride='+ this.data.rideid,
+      url: '../newApplication/newApplication?ride='+ this.data.rideid,
     })
   }
 })

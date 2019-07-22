@@ -2,13 +2,13 @@
   "pages": [
     "pages/departure/departure",
     "pages/rideDetail/rideDetail",
-    "pages/completeSelf/completeSelf",
-    "pages/self/self",
+    "pages/editUser/editUser",
+    "pages/user/user",
     "pages/myRide/myRide",
     "pages/notification/notification",
-    "pages/decision/decision",
-    "pages/information/information",
-    "pages/inform/inform",
+    "pages/application/application",
+    "pages/rideList/rideList",
+    "pages/newApplication/newApplication",
     "pages/newRide/newRide"
   ],
   "window": {
@@ -31,7 +31,7 @@
         "selectedIconPath": "images/tabBars/trip.png"
       },
       {
-        "pagePath": "pages/completeSelf/completeSelf",
+        "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "images/tabBars/profile.png",
         "selectedIconPath": "images/tabBars/profile.png"

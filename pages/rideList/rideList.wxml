@@ -1,4 +1,4 @@
-<!--pages/information/information.wxml-->
+<!--pages/rideList/rideList.wxml-->
 
 <!--自定义组件-->
 <view>出发地：{{departure}}</view>

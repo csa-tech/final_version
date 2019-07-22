@@ -1,4 +1,4 @@
-// pages/information/information.js
+// pages/rideList/rideList.js
 
 Page({
 

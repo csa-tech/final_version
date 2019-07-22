@@ -1,4 +1,4 @@
-/* pages/completeSelf/completeSelf.wxss */
+/* pages/editUser/editUser.wxss */
 
 .user-icon{
   height: 150rpx; 

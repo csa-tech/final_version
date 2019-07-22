@@ -1,4 +1,4 @@
-<!--pages/self/self.wxml-->
+<!--pages/user/user.wxml-->
 <van-button round plain hairline type="primary" class="header" size="small" bindtap="finished">完成</van-button>
  
 <!--image-->

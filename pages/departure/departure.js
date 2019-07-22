@@ -85,7 +85,7 @@ Page({
     
     if(this.data.departure != this.data.destination){
       wx.navigateTo({
-        url: '../information/information?departure=' + this.data.departure + "&destination=" + this.data.destination + "&date=" +this.data.month +"/" + this.data.day + "/" + this.data.year ,
+        url: '../rideList/rideList?departure=' + this.data.departure + "&destination=" + this.data.destination + "&date=" +this.data.month +"/" + this.data.day + "/" + this.data.year ,
       })
     }else{
       Toast("出发地和目的地不能相同")

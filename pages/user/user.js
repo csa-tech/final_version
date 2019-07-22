@@ -1,4 +1,4 @@
-// pages/self/self.js
+// pages/user/user.js
 var app = getApp();
 Page({
 
@@ -188,7 +188,7 @@ Page({
       }
     }),
     wx.navigateBack({
-      url: '../completeSelf/completeSelf'
+      url: '../editUser/editUser'
     })
   }
 });

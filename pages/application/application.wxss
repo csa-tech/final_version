@@ -1,4 +1,4 @@
-/* pages/decision/decision.wxss */
+/* pages/application/application.wxss */
 
 .info-body{
   display: flex;

@@ -2,7 +2,7 @@
 
 
 <scroll-view class = "page-body" scroll-y = "true">
-  <navigator wx:for = "{{notifications}}" wx:for-item = "i" url = "../decision/decision?id={{i.ride_id}}"> 
+  <navigator wx:for = "{{notifications}}" wx:for-item = "i" url = "../application/application?id={{i.ride_id}}"> 
     <view class = "item"> 
       <image class = "page-photo" src = "{{i.ImageURL}}"> </image>
       
