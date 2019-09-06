@@ -8,11 +8,7 @@ Page({
    * 
    */
   data: {
-    UserImgUrl: app.globalData.UserImgUrl,
-    carColor: app.globalData.carColor,
-    carImgUrl: app.globalData.carImgUrl,
-    carLicense: app.globalData.carLicense,
-    carType: app.globalData.carType,
+    avatar_url: app.globalData.avatar_url,
     name: app.globalData.name,
     contact: app.globalData.contact
   },
@@ -72,21 +68,6 @@ Page({
   onShareAppMessage: function () {
     
   },
-  setCarPhotoInfo: function(){
-    var $ = this;
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['compressed', 'original'],
-      sourceType: ['album', 'camera'],
-      success: (res) =>{
-        console.log('new image');
-        var newpath = res.tempFilePaths;
-        $.setData({
-          carImgUrl: newpath
-        })
-      } 
-    })
-  },
   setPhotoInfo: function(){
     var $ = this;
     wx.chooseImage({
@@ -100,7 +81,6 @@ Page({
         // wx.request({
         //   url: 'http://13.56.241.40:3014',
         // })
-
         // console.log(res.tempFiles[0]);
         // wx.uploadFile({
         //   url: 'http://13.56.241.40:3014/Personal?user_ID=' + String(app.globalData.user_id),
@@ -109,10 +89,10 @@ Page({
         //   name: '' + String(app.globalData.user_id),
         //   formData: {},
         //   success(res){
-
         //   }
         // })
-        $.setData({ UserImgUrl: newpath })
+        $.setData({ avatar_url: newpath })
+        app.globalData.avatar_url = $.data.avatar_url;
       },
     })
   },
@@ -132,42 +112,24 @@ Page({
     })
     app.globalData.contact = $.data.contact;
   },
-  carTypeInput: function (e) {
-    var $ = this;
-    $.setData({
-      carType: e.detail
-    })
-    app.globalData.carType = $.data.carType;
-  },
-  carLicenseInput: function (e) {
-    var $ = this;
-    $.setData({
-      carLicense: e.detail
-    })
-    app.globalData.carLicense = $.data.carLicense;
-  },
-  carColorInput: function (e) {
-    var $ = this;
-    $.setData({
-      carColor: e.detail
-    })
-    app.globalData.carColor = $.data.carColor;
-  },
-  term: function(){
-    wx.navigateTo({url: '../term/term'});
-  },
   // when finished post data to global data
   finished: function () {
+
     var $ = this;
-    app.globalData.contact = $.data.contact
-    app.globalData.UserImgUrl = $.data.UserImgUrl 
-    app.globalData.name = $.data.name
+    app.globalData.contact = $.data.contact;
+    app.globalData.avatar_url = $.data.avatar_url;
+    app.globalData.name = $.data.name;
+    // wx.navigateBack({
+    //   url: '../editUser/editUser'
+    // });
     wx.request({
-      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.user_id),
+      url: "http://localhost:3000/user/user?user_id=" + 202,
+      // url: "http://13.56.241.40:3014/user/user/user?user_ID=" + 202,//String(app.globalData.user_id),
       method: 'post',
       data: {
         name: app.globalData.name,
         contact: app.globalData.contact,
+        avatar_url: app.globalData.avatar_url
       },
       success: function (res) {
         if (res.data.status == true) {
@@ -179,11 +141,11 @@ Page({
           ID = res.data.data.ID;
           that.globalData.UserID = ID;
         } else {
-          wx.showToast({
-            title: res.data.toString.name,
-            icon: 'warn',
-            duration: 2000
-          })
+          // wx.showToast({
+          //   title: res.data.toString.name,
+          //   icon: 'warn',
+          //   duration: 2000
+          // })
         }
       }
     }),

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    UserImgUrl: app.globalData.UserImgUrl,
+    avatar_url: app.globalData.avatar_url,
     carColor: app.globalData.carColor,
     carImgUrl: app.globalData.carImgUrl,
     carLicense: app.globalData.carLicense,
@@ -21,11 +21,11 @@ Page({
   onLoad: function () {
     var $ = this;
     wx.request({
-      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.userID),
+      url: "http://13.56.241.40:3014/Personal?user_ID=" + 202,//String(app.globalData.userID),
       method: 'get',
       success: function (res) {
         console.log(res.data)
-        var UserImgUrl = res.data[0].UserImgUrl;
+        var avatar_url = res.data[0].avatar_url;
         var carColor = res.data[0].carColor;
         var carImgUrl = res.data[0].carImgUrl;
         var carLicense = res.data[0].carLicense;
@@ -34,7 +34,7 @@ Page({
         var contact = res.data[0].contact;
         var user_id = res.data[0].user_id;
 
-        app.globalData.UserImgUrl = UserImgUrl;
+        app.globalData.avatar_url = avatar_url;
         app.globalData.carColor = carColor;
         app.globalData.carImgUrl = carImgUrl;
         app.globalData.carLicense = carLicense;
@@ -44,7 +44,7 @@ Page({
         app.globalData.user_id = user_id;
 
         $.setData({
-          UserImgUrl: app.globalData.UserImgUrl,
+          avatar_url: app.globalData.avatar_url,
           carColor: app.globalData.carColor,
           carImgUrl: app.globalData.carImgUrl,
           carLicense: app.globalData.carLicense,

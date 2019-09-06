@@ -16,7 +16,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.1",
 	"appid": "wxdf4236783aec3090",
-	"projectname": "final",
+	"projectname": "front-final",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
