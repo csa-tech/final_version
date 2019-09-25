@@ -1,7 +1,7 @@
 {
     "id": "mockoon_export",
     "appVersion": "1.4.0",
-    "checksum": "682d77c063638eb0e5c634731b0a1293",
+    "checksum": "624030f00ef0e201bbc0c473ef325d50",
     "subject": "full",
     "data": [
         {
@@ -50,7 +50,7 @@
                     "uuid": "11104544-dfe3-11e9-a744-bd3a0469242c",
                     "documentation": "View filtered rides",
                     "method": "get",
-                    "endpoint": "view-rides",
+                    "endpoint": "view-ride-list",
                     "body": "{\r\n    \"result\": [\r\n        {\r\n            \"ride_id\": 1,\r\n            \"driver_id\": 202,\r\n            \"departure\": \"Isla Vista\",\r\n            \"destination\": \"Los Angeles\",\r\n            \"date\": \"08/01/2019\",\r\n            \"price\": 10,\r\n            \"num_seat\": 4,\r\n            \"num_approved\": 1,\r\n            \"status\": \"OPEN\",\r\n            \"note\": \"Very fast.\"\r\n        },\r\n        {\r\n            \"ride_id\": 2,\r\n            \"driver_id\": 202,\r\n            \"departure\": \"Isla Vista\",\r\n            \"destination\": \"San Jose\",\r\n            \"date\": \"08/03/2019\",\r\n            \"price\": 10,\r\n            \"num_seat\": 4,\r\n            \"num_approved\": 0,\r\n            \"status\": \"OPEN\",\r\n            \"note\": \"Very slow.\"\r\n        } \r\n        \r\n    ]\r\n} ",
                     "latency": 0,
                     "statusCode": "200",
