@@ -1,7 +1,7 @@
 {
     "id": "mockoon_export",
     "appVersion": "1.4.0",
-    "checksum": "ab81f4e591a6ab5c736253ff2d5794d4",
+    "checksum": "ccf3972aaf75dbddb51d4a3b59ecf623",
     "subject": "full",
     "data": [
         {
@@ -32,7 +32,7 @@
                 {
                     "uuid": "29ab8e70-dfe3-11e9-9b02-bf1ef9924e93",
                     "documentation": "Create Ride",
-                    "method": "get",
+                    "method": "post",
                     "endpoint": "create-ride",
                     "body": "{}",
                     "latency": 0,
