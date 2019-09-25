@@ -1,6 +1,6 @@
 <view>
 <view class='page-body'>
-  <view class='page-section'>
+  <!-- <view class='page-section'>
     <view class='title'>
       <view>你想让司机接你的地方:</view>
     </view>
@@ -19,7 +19,7 @@
         <input bindinput='drop'></input>
       </view>
     </view>
-  </view>
+  </view> -->
   <view class='page-section'>
     <view class='title'>
       <view>人数</view>
@@ -30,7 +30,7 @@
       </view>
     </view>
   </view>
-  <view class='page-section'>
+  <!-- <view class='page-section'>
     <view class='title'>
       <view>微信号:</view>
     </view>
@@ -39,7 +39,7 @@
         <input bindinput='wechat_id'></input>
       </view>
     </view>
-  </view>
+  </view> -->
   <view class='page-section'>
       <view class='title'>
       <view>备注:</view>
@@ -47,7 +47,7 @@
     <view class='try'>
     <view class='textarea'>
     <view class='textarea-wrp'>
-    <textarea bindblur='bindtextareablur'  placeholder='请输入备注' bindinput='note'></textarea>
+    <textarea bindblur='bindtextareablur'  placeholder='具体接送时间地点' bindinput='note'></textarea>
     </view>
     </view>
     </view>

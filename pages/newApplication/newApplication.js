@@ -1,39 +1,41 @@
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    pick: null,
-    drop: null,
+    // pick: null,
+    // drop: null,
     people_num: null,
-    wechat_id: null,
+    // wechat_id: null,
     note: null
   },
 
-  pick: function (e) {
-    this.setData({
-      pick: e.detail.value
-    })
+  // pick: function (e) {
+  //   this.setData({
+  //     pick: e.detail.value
+  //   })
      
-  },
+  // },
 
-  drop: function (e) {
-    this.setData({
-      drop: e.detail.value
-    })
-  },
+  // drop: function (e) {
+  //   this.setData({
+  //     drop: e.detail.value
+  //   })
+  // },
   people_num: function (e) {
     this.setData({
       people_num: e.detail.value
     })
   },
 
-  wechat_id: function (e) {
-    this.setData({
-      wechat_id: e.detail.value
-    })
-  },
+  // wechat_id: function (e) {
+  //   this.setData({
+  //     wechat_id: e.detail.value
+  //   })
+  // },
 
   note: function (e) {
     this.setData({
@@ -47,15 +49,16 @@ Page({
 
   submit: function(e){
     wx.request({
-      url: "http://localhost:3000/application", //这里缺少一个post的URL，无法上传数据
+      url: "http://localhost:3000/create-application", //这里缺少一个post的URL，无法上传数据
       method : "POST",
       data:{
-        pick : this.data.pick,
-        drop : this.data.drop,
+        // pick : this.data.pick,
+        // drop : this.data.drop,
         people_num : this.data.people_num,
-        wechat_id : this.data.wechat_id,
+        // wechat_id : this.data.wechat_id,
         note : this.data.note,
-        rideid: this.data.rideid
+        rideid: this.data.rideid,
+        userid: app.globalData.userID.userid
       },
       success(res){
         wx.showToast({
