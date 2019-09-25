@@ -1,7 +1,7 @@
 //app.js
 App({
   globalData: {
-    avatar_url: null,
+    UserImgUrl: null,
     carColor: null,
     carImgUrl: null,
     carLicense: null,
@@ -20,9 +20,9 @@ App({
         console.log(res)
         if (res.code) {
           wx.request({
-            url: "http://localhost:3000/666",
+            url: "http://localhost:3000/login",
             data: res.code,
-            method: 'POST',
+            method: 'GET',
             success: res => {
               console.log(this)
               this.globalData.userID = res.data

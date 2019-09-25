@@ -23,7 +23,7 @@ Page({
     })
     wx.request({
       // url: "http://13.56.241.40:3033/ridelist?departure="+that.data.departure+"&destination="+that.data.destination+"&date=" + this.data.date, 
-      url: "http://13.56.241.40:3033/ridelist?departure=SBA&destination=SFO&date=03/03/2019",
+      url: "http://localhost:3000/view-rides",
 
       data: {},
       header: {
@@ -32,7 +32,7 @@ Page({
       success:function(res) {
         console.log(res.data)
         that.setData({
-          response:res.data
+          response:res.data.result
         })
       },
       fail:function(res){

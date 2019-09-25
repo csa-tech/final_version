@@ -1,5 +1,33 @@
 /* pages/newRide/newRide.wxss */
 
+.buttonContainerClass{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 30rpx 30rpx 30rpx 30rpx
+}
+.buttonClass{
+  margin: 0rpx 100rpx 0rpx 0rpx !important
+} 
+.toolBarClass{
+  background: grey !important;
+}
+.pickerClass{
+  padding: 0px 0px 0px 0px !important;
+  margin: 0px 0px 0px 0px !important;
+  border: 0px 0px 0px 0px !important;
+  height:450rpx; 
+}
+.popupClass{
+  width: 600rpx !important;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  margin: 30rpx 30rpx 30rpx 30rpx;
+  align-items: center
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;

@@ -2,7 +2,7 @@
 <view class='page-body'>
   <view class='page-section'>
     <view class='title'>
-      <view>你想让司机接你的地方:{{pick}}</view>
+      <view>你想让司机接你的地方:</view>
     </view>
     <view class='try'>
       <view class='input'>
@@ -42,7 +42,7 @@
   </view>
   <view class='page-section'>
       <view class='title'>
-      <view>备注:{{note}}</view>
+      <view>备注:</view>
       </view>
     <view class='try'>
     <view class='textarea'>
@@ -53,7 +53,8 @@
     </view>
   </view>
   <view class='page-section'>
-    <button type='primary' bindtap='submit' >提交</button>
+    <button type='primary' bindtap='submit' >提交</button> 
+    <!-- 这里是不是要添加一个submit function 还有submit成功后自动的页面跳转 -->
   </view>
 </view>
 </view>

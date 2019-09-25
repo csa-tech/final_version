@@ -18,7 +18,7 @@ Page({
     console.log(app.globalData.userID)
     wx.request({
       // url: "http://13.56.241.40:3077/ride_list? +user_ID" + app.globalData.userID ,
-      url: "http://13.56.241.40:3077/ride_list?user_ID=1",
+      url: "http://localhost:3000/view-my-rides",
       data: {},
       header: {
         'content-type': 'application/json' // 默认值
@@ -26,7 +26,7 @@ Page({
       success: function (res) {
         console.log(res.data);
         that.setData({
-          response: res.data
+          response: res.data.result
         })
       }
     })
