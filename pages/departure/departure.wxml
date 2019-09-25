@@ -57,15 +57,15 @@
 </van-popup>
 
 <!--time picker popup-->
-<view class="buttonContainerClass">
+<!-- <view class="buttonContainerClass">
   <view class = "row">
     <van-button type="default" custom-class = "buttonClass" bind:click="onClickTimePicker">选择时间</van-button>
     <view>{{year}}年{{month}}月{{day}}日</view>
   </view>
-</view>
-<van-popup show="{{showTimePicker}}" overlay="true" bind:close="onCloseTimePicker" custom-class="popupClass">
+</view> -->
+<!-- <van-popup show="{{showTimePicker}}" overlay="true" bind:close="onCloseTimePicker" custom-class="popupClass">
 <van-datetime-picker type = 'date' value = '{{currentDate}}' min-date = "{{minDate}}" max-date = "{{maxDate}}" bind:input = "onInput" formatter = '{{formatter}}' confirm="onConfirm" cancel-button-text="" confirm-button-text="" show-toolbar= "true" visible-item-count = "3"/> 
-</van-popup>
+</van-popup> -->
 <view class = "buttonClass"> 
   <van-button type = "danger" bind:click ="onClick" >搜索</van-button> 
 </view>
