@@ -1,12 +1,12 @@
 {
     "id": "mockoon_export",
     "appVersion": "1.4.0",
-    "checksum": "624030f00ef0e201bbc0c473ef325d50",
+    "checksum": "ab81f4e591a6ab5c736253ff2d5794d4",
     "subject": "full",
     "data": [
         {
             "uuid": "11104540-dfe3-11e9-a744-bd3a0469242c",
-            "name": "Rideshare v0.5",
+            "name": "Rideshare v0.6",
             "endpointPrefix": "",
             "latency": 0,
             "port": 3000,
@@ -50,7 +50,7 @@
                     "uuid": "11104544-dfe3-11e9-a744-bd3a0469242c",
                     "documentation": "View filtered rides",
                     "method": "get",
-                    "endpoint": "view-ride-list",
+                    "endpoint": "view-rides",
                     "body": "{\r\n    \"result\": [\r\n        {\r\n            \"ride_id\": 1,\r\n            \"driver_id\": 202,\r\n            \"departure\": \"Isla Vista\",\r\n            \"destination\": \"Los Angeles\",\r\n            \"date\": \"08/01/2019\",\r\n            \"price\": 10,\r\n            \"num_seat\": 4,\r\n            \"num_approved\": 1,\r\n            \"status\": \"OPEN\",\r\n            \"note\": \"Very fast.\"\r\n        },\r\n        {\r\n            \"ride_id\": 2,\r\n            \"driver_id\": 202,\r\n            \"departure\": \"Isla Vista\",\r\n            \"destination\": \"San Jose\",\r\n            \"date\": \"08/03/2019\",\r\n            \"price\": 10,\r\n            \"num_seat\": 4,\r\n            \"num_approved\": 0,\r\n            \"status\": \"OPEN\",\r\n            \"note\": \"Very slow.\"\r\n        } \r\n        \r\n    ]\r\n} ",
                     "latency": 0,
                     "statusCode": "200",
@@ -83,24 +83,6 @@
                     "sendFileAsBody": false
                 },
                 {
-                    "uuid": "11104548-dfe3-11e9-a744-bd3a0469242c",
-                    "documentation": "View rides of which I'm the driver or passenger",
-                    "method": "get",
-                    "endpoint": "view-my-rides",
-                    "body": "{\r\n    \"result\": [\r\n        {\r\n            \"ride_id\": 1,\r\n            \"driver_id\": 202,\r\n            \"departure\": \"Isla Vista\",\r\n            \"destination\": \"Los Angeles\",\r\n            \"date\": \"08/01/2019\",\r\n            \"price\": 10,\r\n            \"num_seat\": 4,\r\n            \"num_approved\": 1,\r\n            \"status\": \"OPEN\",\r\n            \"note\": \"Very fast.\"\r\n        },\r\n        {\r\n            \"ride_id\": 2,\r\n            \"driver_id\": 202,\r\n            \"departure\": \"Isla Vista\",\r\n            \"destination\": \"San Jose\",\r\n            \"date\": \"08/03/2019\",\r\n            \"price\": 10,\r\n            \"num_seat\": 4,\r\n            \"num_approved\": 0,\r\n            \"status\": \"OPEN\",\r\n            \"note\": \"Very slow.\"\r\n        } \r\n        \r\n    ]\r\n} ",
-                    "latency": 0,
-                    "statusCode": "200",
-                    "headers": [
-                        {
-                            "key": "",
-                            "value": "",
-                            "uuid": "11104549-dfe3-11e9-a744-bd3a0469242c"
-                        }
-                    ],
-                    "filePath": "",
-                    "sendFileAsBody": false
-                },
-                {
                     "uuid": "1110454a-dfe3-11e9-a744-bd3a0469242c",
                     "documentation": "Create Application",
                     "method": "post",
@@ -119,18 +101,18 @@
                     "sendFileAsBody": false
                 },
                 {
-                    "uuid": "1110454c-dfe3-11e9-a744-bd3a0469242c",
-                    "documentation": "View My Applications",
+                    "uuid": "11104548-dfe3-11e9-a744-bd3a0469242c",
+                    "documentation": "View rides of which I'm the driver or passenger",
                     "method": "get",
-                    "endpoint": "view-my-applications",
-                    "body": " {\r\n    \"result\": [\r\n        {\r\n            \"application_Id\": 10,\r\n            \"ride_id\": 1,\r\n            \"driver_id\": 202,\r\n            \"passenger_id\": 202,\r\n            \"status\": \"ACCEPTED\",\r\n            \"num_passenger\": 1,\r\n            \"note\": \"old driver take take me\"\r\n        },{\r\n            \"application_Id\": 20,\r\n            \"ride_id\": 2,\r\n            \"driver_id\": 202,\r\n            \"passenger_id\": 202,\r\n            \"status\": \"PENDING\",\r\n            \"num_passenger\": 100,\r\n            \"note\": \"take me home country road\"\r\n        }\r\n    ]\r\n}",
+                    "endpoint": "view-my-rides",
+                    "body": "{\r\n    \"result\": [\r\n        {\r\n            \"ride_id\": 1,\r\n            \"driver_id\": 202,\r\n            \"departure\": \"Isla Vista\",\r\n            \"destination\": \"Los Angeles\",\r\n            \"date\": \"08/01/2019\",\r\n            \"price\": 10,\r\n            \"num_seat\": 4,\r\n            \"num_approved\": 1,\r\n            \"status\": \"OPEN\",\r\n            \"note\": \"Very fast.\"\r\n        },\r\n        {\r\n            \"ride_id\": 2,\r\n            \"driver_id\": 202,\r\n            \"departure\": \"Isla Vista\",\r\n            \"destination\": \"San Jose\",\r\n            \"date\": \"08/03/2019\",\r\n            \"price\": 10,\r\n            \"num_seat\": 4,\r\n            \"num_approved\": 0,\r\n            \"status\": \"OPEN\",\r\n            \"note\": \"Very slow.\"\r\n        } \r\n        \r\n    ]\r\n} ",
                     "latency": 0,
                     "statusCode": "200",
                     "headers": [
                         {
                             "key": "",
                             "value": "",
-                            "uuid": "1110454d-dfe3-11e9-a744-bd3a0469242c"
+                            "uuid": "11104549-dfe3-11e9-a744-bd3a0469242c"
                         }
                     ],
                     "filePath": "",
@@ -138,7 +120,7 @@
                 },
                 {
                     "uuid": "1110454e-dfe3-11e9-a744-bd3a0469242c",
-                    "documentation": "View My Pending Applications",
+                    "documentation": "View My Pending Application List",
                     "method": "get",
                     "endpoint": "view-my-pending-applications",
                     "body": " {\r\n    \"result\": [\r\n        {\r\n            \"application_Id\": 20,\r\n            \"ride_id\": 2,\r\n            \"driver_id\": 202,\r\n            \"passenger_id\": 202,\r\n            \"status\": \"PENDING\",\r\n            \"num_passenger\": 100,\r\n            \"note\": \"take me home country road\"\r\n        }\r\n    ]\r\n}",
