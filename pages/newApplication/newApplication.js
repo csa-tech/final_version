@@ -49,16 +49,16 @@ Page({
 
   submit: function(e){
     wx.request({
-      url: "http://localhost:3000/create-application", //这里缺少一个post的URL，无法上传数据
+      url: "http://localhost:3010/create-application", //这里缺少一个post的URL，无法上传数据
       method : "POST",
       data:{
         // pick : this.data.pick,
         // drop : this.data.drop,
-        people_num : this.data.people_num,
+        num_passenger : this.data.people_num,
         // wechat_id : this.data.wechat_id,
         note : this.data.note,
-        rideid: this.data.rideid,
-        userid: app.globalData.userID.userid
+        ride_id: this.data.rideid,
+        user_id: app.globalData.userID.user_id
       },
       success(res){
         wx.showToast({
