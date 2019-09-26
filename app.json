@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/userInfo/userInfo",
+    
     "pages/departure/departure",
     "pages/rideDetail/rideDetail",
-    
+    "pages/userInfo/userInfo",
     "pages/editUser/editUser",
     "pages/myRide/myRide",
     "pages/notification/notification",

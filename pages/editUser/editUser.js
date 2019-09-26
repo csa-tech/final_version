@@ -77,7 +77,6 @@ Page({
       sourceType : ['album', 'camera'],
       success: function(res) {
         var newpath = res.tempFilePaths[0];
-        console.log(newpath);
         
         // wx.request({
         //   url: 'http://13.56.241.40:3014',
@@ -114,30 +113,11 @@ Page({
     })
     app.globalData.contact = $.data.contact;
   },
-  carTypeInput: function (e) {
-    var $ = this;
-    $.setData({
-      carType: e.detail
-    })
-    app.globalData.carType = $.data.carType;
-  },
-  carLicenseInput: function (e) {
-    var $ = this;
-    $.setData({
-      carLicense: e.detail
-    })
-    app.globalData.carLicense = $.data.carLicense;
-  },
-  carColorInput: function (e) {
-    var $ = this;
-    $.setData({
-      carColor: e.detail
-    })
-    app.globalData.carColor = $.data.carColor;
-  },
+
   term: function(){
     wx.navigateTo({url: '../term/term'});
   },
+
   // when finished post data to global data
   finished: function () {
     var $ = this;
@@ -151,27 +131,10 @@ Page({
         name: app.globalData.name,
         contact: app.globalData.contact,
         avatar_url: app.globalData.avatar_url
-      },
-      success: function (res) {
-        if (res.data.status == true) {
-          wx.showToast({
-            title: 'success',
-            icon: 'success',
-            duration: 2000
-          })
-          ID = res.data.data.ID;
-          that.globalData.UserID = ID;
-        } else {
-          wx.showToast({
-            title: res.data.toString.name,
-            icon: 'warn',
-            duration: 2000
-          })
-        }
       }
     }),
     wx.navigateBack({
-      url: '../editUser/editUser'
+      url: '../userInfo/userInfo'
     })
   }
 });
