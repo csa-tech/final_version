@@ -1,82 +1,31 @@
-// pages/editUser/editUser.js
+// pages/user/user.js
 var app = getApp();
 Page({
+
   /**
    * 页面的初始数据
+   * 存入data lib
+   * 
    */
   data: {
-    UserImgUrl: app.globalData.UserImgUrl,
+    avatar_url: app.globalData.avatar_url,
     carColor: app.globalData.carColor,
-    carImgUrl: app.globalData.carImgUrl,
-    carLicense: app.globalData.carLicense,
-    carType: app.globalData.carType,
     name: app.globalData.name,
-    contact: app.globalData.contact,
-    user_id: app.globalData.userID
+    contact: app.globalData.contact
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    var $ = this;
-    wx.request({
-      url: "http://13.56.241.40:3014/Personal?user_ID=" + String(app.globalData.userID),
-      method: 'get',
-      success: function (res) {
-        console.log(res.data)
-        var UserImgUrl = res.data[0].UserImgUrl;
-        var carColor = res.data[0].carColor;
-        var carImgUrl = res.data[0].carImgUrl;
-        var carLicense = res.data[0].carLicense;
-        var carType = res.data[0].carType;
-        var name = res.data[0].name;
-        var contact = res.data[0].contact;
-        var user_id = res.data[0].user_id;
 
-        app.globalData.UserImgUrl = UserImgUrl;
-        app.globalData.carColor = carColor;
-        app.globalData.carImgUrl = carImgUrl;
-        app.globalData.carLicense = carLicense;
-        app.globalData.carType = carType;
-        app.globalData.name = name;
-        app.globalData.contact = contact;
-        app.globalData.user_id = user_id;
-
-        $.setData({
-          UserImgUrl: app.globalData.UserImgUrl,
-          carColor: app.globalData.carColor,
-          carImgUrl: app.globalData.carImgUrl,
-          carLicense: app.globalData.carLicense,
-          carType: app.globalData.carType,
-          name: app.globalData.name,
-          contact: app.globalData.contact,
-          user_id: app.globalData.user_id
-        })
-        
-        if (res.data.status == true) {
-          wx.showToast({
-            title: 'success',
-            icon: 'success',
-            duration: 2000
-          })
-          ID = res.data.data.ID;
-          app.globalData.UserID = ID;
-        } else {
-          wx.showToast({
-            title: res.data.toString.name,
-            icon: 'warn',
-            duration: 2000
-          })
-        }
-      }
-    })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+  
   },
 
   /**
@@ -118,9 +67,111 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    
   },
-  self: function () {
-    wx.navigateTo({ url: '../../pages/user/user' });
+  setPhotoInfo: function(){
+    var $ = this;
+    wx.chooseImage({
+      count : 1,
+      sizeType : ['compressed', 'original'],
+      sourceType : ['album', 'camera'],
+      success: function(res) {
+        var newpath = res.tempFilePaths[0];
+        console.log(newpath);
+        
+        // wx.request({
+        //   url: 'http://13.56.241.40:3014',
+        // })
+
+        // console.log(res.tempFiles[0]);
+        // wx.uploadFile({
+        //   url: 'http://13.56.241.40:3014/Personal?user_id=' + String(app.globalData.user_id),
+        //   header: { 'content-type': 'multipart/form-data' },
+        //   filePath: newpath[0],
+        //   name: '' + String(app.globalData.user_id),
+        //   formData: {},
+        //   success(res){
+
+        //   }
+        // })
+        $.setData({ avatar_url: newpath })
+      },
+    })
+  },
+  // handler for input "name"
+  UserNameInput: function (e) {
+    var $ = this;
+    $.setData({
+      name: e.detail
+    })
+    app.globalData.name = $.data.name;
+  },
+  // handler for input "contact"
+  contactInput:function (e){
+    var $ = this;
+    $.setData({
+      contact: e.detail
+    })
+    app.globalData.contact = $.data.contact;
+  },
+  carTypeInput: function (e) {
+    var $ = this;
+    $.setData({
+      carType: e.detail
+    })
+    app.globalData.carType = $.data.carType;
+  },
+  carLicenseInput: function (e) {
+    var $ = this;
+    $.setData({
+      carLicense: e.detail
+    })
+    app.globalData.carLicense = $.data.carLicense;
+  },
+  carColorInput: function (e) {
+    var $ = this;
+    $.setData({
+      carColor: e.detail
+    })
+    app.globalData.carColor = $.data.carColor;
+  },
+  term: function(){
+    wx.navigateTo({url: '../term/term'});
+  },
+  // when finished post data to global data
+  finished: function () {
+    var $ = this;
+    app.globalData.contact = $.data.contact
+    app.globalData.avatar_url = $.data.avatar_url 
+    app.globalData.name = $.data.name
+    wx.request({
+      url: "http://localhost:3000/update-user?user_id=" + 202,//String(app.globalData.user_id),
+      method: 'post',
+      data: {
+        name: app.globalData.name,
+        contact: app.globalData.contact,
+        avatar_url: app.globalData.avatar_url
+      },
+      success: function (res) {
+        if (res.data.status == true) {
+          wx.showToast({
+            title: 'success',
+            icon: 'success',
+            duration: 2000
+          })
+          ID = res.data.data.ID;
+          that.globalData.UserID = ID;
+        } else {
+          wx.showToast({
+            title: res.data.toString.name,
+            icon: 'warn',
+            duration: 2000
+          })
+        }
+      }
+    }),
+    wx.navigateBack({
+      url: '../editUser/editUser'
+    })
   }
-})
+});

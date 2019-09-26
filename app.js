@@ -1,7 +1,7 @@
 //app.js
 App({
   globalData: {
-    UserImgUrl: null,
+    avatar_url: null,
     carColor: null,
     carImgUrl: null,
     carLicense: null,

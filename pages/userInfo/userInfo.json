@@ -2,6 +2,6 @@
   "navigationBarTitleText": "个人信息",
   "usingComponents": {
     "van-button": "/dist/button/index",
-    "van-field": "/dist/field/index"
+    "van-panel": "/dist/panel/index"
   }
 }
