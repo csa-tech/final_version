@@ -25,7 +25,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
@@ -67,17 +67,18 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   },
-  setPhotoInfo: function(){
+  setPhotoInfo: function () {
     var $ = this;
     wx.chooseImage({
-      count : 1,
-      sizeType : ['compressed', 'original'],
-      sourceType : ['album', 'camera'],
-      success: function(res) {
+      count: 1,
+      sizeType: ['compressed', 'original'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
         var newpath = res.tempFilePaths[0];
-        
+
+
         // wx.request({
         //   url: 'http://13.56.241.40:3014',
         // })
@@ -106,7 +107,7 @@ Page({
     app.globalData.name = $.data.name;
   },
   // handler for input "contact"
-  contactInput:function (e){
+  contactInput: function (e) {
     var $ = this;
     $.setData({
       contact: e.detail
@@ -114,15 +115,14 @@ Page({
     app.globalData.contact = $.data.contact;
   },
 
-  term: function(){
-    wx.navigateTo({url: '../term/term'});
+  term: function () {
+    wx.navigateTo({ url: '../term/term' });
   },
-
   // when finished post data to global data
   finished: function () {
     var $ = this;
     app.globalData.contact = $.data.contact
-    app.globalData.avatar_url = $.data.avatar_url 
+    app.globalData.avatar_url = $.data.avatar_url
     app.globalData.name = $.data.name
     wx.request({
       url: "http://localhost:3000/update-user?user_id=" + 202,//String(app.globalData.user_id),
@@ -133,8 +133,8 @@ Page({
         avatar_url: app.globalData.avatar_url
       }
     }),
-    wx.navigateBack({
-      url: '../userInfo/userInfo'
-    })
+      wx.navigateBack({
+        url: '../user/user'
+      })
   }
 });

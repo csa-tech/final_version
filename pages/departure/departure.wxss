@@ -8,10 +8,7 @@
   margin: 30rpx 30rpx 30rpx 30rpx
 }
 .buttonClass{
-  margin: 0rpx 100rpx 0rpx 0rpx !important;
-  display: flex;
-  justify-content: flex-end
-
+  margin: 0rpx 100rpx 0rpx 0rpx !important
 } 
 .toolBarClass{
   background: grey !important;
