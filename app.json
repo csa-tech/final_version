@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/departure/departure",
     "pages/rideDetail/rideDetail",
     "pages/userInfo/userInfo",
