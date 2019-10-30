@@ -10,14 +10,14 @@
 
 <block wx:else> 
 <block wx:for="{{response}}" wx:for-item="item" wx:for-index="idx">
-  <navigator wx:if="{{idx%2==0}}" url="../rideDetail/rideDetail?ride_id={{item.ride_id}}" class='greyListContainer'>
+  <navigator wx:if="{{idx%2==0}}" url="../rideDetail/rideDetail?rideid={{item.ride_id}}&driverName={{item.driver_id}}&departure={{item.departure}}&destination={{item.destination}}&price={{item.price}}" class='greyListContainer'>
     <view class="line">出发地: {{item.departure}}</view>
     <view class='line'>目的地: {{item.destination}}</view>
     <view class='line'>出发日期：{{item.date}}</view>
     <!-- <view class='line'> 出发时间：{{item.time}}</view> -->
     <text class="line">人数：{{item.num_approved}}/{{item.num_seat}}</text>    
   </navigator>
-  <navigator wx:else class="whiteListContainer" url="../rideDetail/rideDetail?ride_id={{item.ride_id}}" >
+  <navigator wx:else class="whiteListContainer" url="../rideDetail/rideDetail?rideid={{item.rideid}}&driverName={{item.driverName}}&departure={{item.departure}}&destination={{item.destination}}&price={{item.price}}" >
   <view class="line"> 出发地：{{item.departure}}</view>
     <view class='line' >目的地: {{item.destination}}</view>
     <view class='line'>出发日期：{{item.date}}</view>

@@ -9,7 +9,7 @@ Page({
   acceptFunc: function (e) {
     console.log("已接受");
     wx.request({
-      url: "http://13.56.241.40:3077/ride_acceptted?user_id="+ String(this.data.decision.ride_id),
+      url: "http://localhost:3000/accept-application?user_id="+ String(this.data.decision.ride_id),
       //parameters = id
       //method: 'PUT',
       data: {
@@ -33,7 +33,7 @@ Page({
     console.log("已拒绝");
     
     wx.request({
-      url: "http://13.56.241.40:3077/ride_deny?user_id=" + String(this.data.decision.ride_id),
+      url: "http://localhost:3000/deny-application?user_id=" + String(this.data.decision.ride_id),
       //parameters = id
       //method: 'PUT',
       data:{
@@ -56,7 +56,7 @@ Page({
     console.log(parameters);
 
     wx.request({
-      url: "http://13.56.241.40:3077/ride_list?user_ID="+String(parameters.id),
+      url: "http://localhost:3000/view-application?user_ID="+String(parameters.id),
       //parameters = id
       data:{},
       header:{
@@ -64,10 +64,10 @@ Page({
       },
       success:function(res){
         console.log(res);
-        that.setData({
-          decision: res.data[0]
-        });
-        console.log(that.data.decision);
+        // that.setData({
+        //   decision: res.data[0]
+        // });
+        // console.log(that.data.decision);
       }
     })
 

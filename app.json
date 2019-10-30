@@ -2,8 +2,8 @@
   "pages": [
     "pages/departure/departure",
     "pages/rideDetail/rideDetail",
-    "pages/userInfo/userInfo",
     "pages/editUser/editUser",
+    "pages/user/user",
     "pages/myRide/myRide",
     "pages/notification/notification",
     "pages/application/application",
@@ -31,7 +31,7 @@
         "selectedIconPath": "images/tabBars/trip.png"
       },
       {
-        "pagePath": "pages/userInfo/userInfo",
+        "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "images/tabBars/profile.png",
         "selectedIconPath": "images/tabBars/profile.png"

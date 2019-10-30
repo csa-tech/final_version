@@ -15,30 +15,16 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      ride_id: options.ride_id
+      drivername: options.driverName,
+      // cartype: options.carType,
+      departure: options.departure,
+      // starttime: options.startTime,
+      destination: options.destination,
+      price: options.price,
+      remainseat:parseInt(options.people)-parseInt(options.approved_people),
+      rideid:options.rideid
     })
-    var baseUrl = "http://localhost:3000"
-    var ride_id = this.data.ride_id
-    var user_id = app.globalData.userID.user_id
-    var that = this
-    console.log(user_id)
-    var URL = `${baseUrl}/view-ride?ride_id=${ride_id}&user_id=${user_id}`
-    console.log(URL)
-
-    wx.request({
-      url: URL,
-      method: 'GET',
-      responseType: 'text',
-      success: function(res) {
-        that.setData({
-          ride: res.data
-        })
-      },
-      fail: function(res) {
-
-      },
-      complete: function(res) {},
-    })
+    
   },
 
   getUserInfo: function (e) {
@@ -49,7 +35,7 @@ Page({
       hasUserInfo: true
     })
   },
-  joinRide: function(){
+  setDisabled: function(){
     wx.navigateTo({
       url: '../newApplication/newApplication?ride='+ this.data.ride_id,
     })

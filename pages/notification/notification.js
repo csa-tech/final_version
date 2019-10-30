@@ -8,7 +8,7 @@ Page({
   onLoad:function(){
     var that = this;
     wx.request({
-      url: "http://13.56.241.40:3077/ride_list?user_ID=all", //缺少消息的URL
+      url: "http://localhost:3000/view-my-pending-applications", //缺少消息的URL
       data:{}, 
       header:{
         'content-type': 'application/json'
