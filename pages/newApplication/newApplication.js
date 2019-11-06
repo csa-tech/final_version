@@ -63,8 +63,8 @@ Page({
           icon: 'success',
           duration: 2000,
         })
-        wx.redirectTo({
-          url: '../departure/departure'
+        wx.switchTab({
+          url: '/pages/myRide/myRide',
         })
       }
     })

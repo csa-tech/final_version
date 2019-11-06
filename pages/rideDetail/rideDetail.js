@@ -15,14 +15,20 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      drivername: options.driverName,
-      // cartype: options.carType,
-      departure: options.departure,
-      // starttime: options.startTime,
-      destination: options.destination,
-      price: options.price,
-      remainseat:parseInt(options.people)-parseInt(options.approved_people),
-      rideid:options.rideid
+      ride_id:options.ride_id
+    })
+    var baseUrl = "http://localhost:3000"
+    var user_id = app.globalData.userID
+    var ride_id = this.data.ride_id
+    var URL = `${baseUrl}/view-ride?user_id=${user_id}&ride_id=${ride_id}`
+    var that = this
+    wx.request({
+      url: URL,
+      success: function(res){
+        that.setData({
+          ride: res.data
+        })
+      }
     })
     
   },

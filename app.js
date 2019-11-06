@@ -25,7 +25,7 @@ App({
             method: 'GET',
             success: res => {
               console.log(this)
-              this.globalData.userID = res.data
+              this.globalData.userID = res.data.user_id
               // this.gd.ID = res.data
               if (this.userIDCallback) {
                 this.userIDCallback(res.data);
