@@ -28,7 +28,7 @@ Page({
     destination: "San Francisco",
     showDeparture: false,
     showDestination:false,
-    // showTimePicker: false,
+    showTimePicker: false,
     actions: [
       {
         name: "Santa Barbara"
@@ -157,6 +157,9 @@ Page({
   },
   onClickDestination() {
     this.setData({ showDestination: !this.data.showDestination });
+  },
+  onClickTimePicker(){
+    this.setData({ showTimePicker: !this.data.showTimePicker});
   }
   ,
   onClickTimePicker(){
