@@ -1,5 +1,5 @@
  // pages/myRide/myRide.js
-var app = getApp()
+const app = getApp()
 console.log(app)
 Page({
 
@@ -16,9 +16,12 @@ Page({
   onLoad: function (options) {
     var that=this;
     console.log(app.globalData.userID)
+    var baseUrl = "http://localhost:3000"
+    var user_id = app.globalData.userID.user_id
+    var URL = `${baseUrl}/view-my-rides?user_id=${user_id}`
     wx.request({
       // url: "http://13.56.241.40:3077/ride_list? +user_ID" + app.globalData.userID ,
-      url: "http://localhost:3000/view-my-rides",
+      url: URL,
       data: {},
       header: {
         'content-type': 'application/json' // 默认值

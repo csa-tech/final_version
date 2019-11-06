@@ -12,7 +12,6 @@ Page({
     num: '',
     currentDate: new Date().getTime(),
     minDate: new Date().getTime(),
-    maxDate: new Date(2019, 9, 1).getTime(),
     formatter(type, value) {
       if (type == "year") {
         return `${value}年`;

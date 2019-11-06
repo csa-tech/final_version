@@ -25,7 +25,7 @@
   <view class='line'>出发日期：{{item.date}}</view>
   <!-- <view class='line'> 出发时间：{{item.time}}</view> -->
   <view class='line'> 
-    <text space="ensp">人数：{{item.num_passenger}}/{{item.people_num}}      </text>
+    <text space="ensp">人数：{{item.num_approved}}/{{item.num_seat}}      </text>
     <image src="/images/myRide/me.png" wx:if="{{item.user_ID == user_ID}}" class="mine" class="image">我发布的           </image>   
     <text  wx:if="{{item.status=='pending' && item.user_ID != user_ID}}" class="pending" >等待回复</text> 
     <!--<image wx:if="{{item.status=='mine'}}"src="/images/me.png" style="width: 50rpx; height: 50rpx" padding="1rpx" margin="1rpx" class="meIcon"/>-->
@@ -44,7 +44,7 @@
   <view class='line'>出发日期：{{item.date}}</view>
   <view class='line'> 出发时间：{{item.time}}</view>
   <view class='line'>
-    <view ><text space="ensp">人数：{{item.num_passenger}}/{{item.people_num}}      </text>
+    <view ><text space="ensp">人数：{{item.num_approved}}/{{item.num_seat}}      </text>
     <image src="/images/me.png" wx:if="{{item.user_ID == user_ID}}" class="mine" class="image">我发布的           </image>   
     <text  wx:if="{{item.status=='pending' && item.user_ID != user_ID}}" class="pending" >等待回复</text> 
     <!--<image wx:if="{{item.status=='mine'}}"src="/images/me.png" style="width: 50rpx; height: 50rpx" padding="1rpx" margin="1rpx" class="meIcon"/>-->

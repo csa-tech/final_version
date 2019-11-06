@@ -64,9 +64,9 @@ Page({
         wx.showToast({
           title: '成功',
           icon: 'success',
-          duration: 2000
+          duration: 2000,
         })
-        wx.navigateTo({
+        wx.redirectTo({
           url: '../departure/departure'
         })
       }
