@@ -8,7 +8,7 @@ Page({
   onLoad:function(){
     var that = this;
     wx.request({
-      url: "http://localhost:3000/view-my-pending-applications", //缺少消息的URL
+      url: this.globalData.baseurl+"/view-my-pending-applications", //缺少消息的URL
       data:{}, 
       header:{
         'content-type': 'application/json'

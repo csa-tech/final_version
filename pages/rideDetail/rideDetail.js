@@ -17,7 +17,7 @@ Page({
     this.setData({
       ride_id:options.ride_id
     })
-    var baseUrl = "http://localhost:3000"
+    var baseUrl = this.globalData.baseurl
     var user_id = app.globalData.userID
     var ride_id = this.data.ride_id
     var URL = `${baseUrl}/view-ride?user_id=${user_id}&ride_id=${ride_id}`

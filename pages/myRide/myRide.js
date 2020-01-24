@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
     var that=this;
     console.log(app.globalData.userID)
-    var baseUrl = "http://localhost:3000"
+    var baseUrl = this.globalData.baseurl
     var user_id = app.globalData.userID
     var URL = `${baseUrl}/view-my-rides?user_id=${user_id}`
     wx.request({
