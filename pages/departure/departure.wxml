@@ -25,6 +25,9 @@
 
 <!--Departure popup-->
 <!-- <view class="buttonContainerClass"> -->
+<view class = "row">
+<text class = "big"> CSA 无敌ride share </text>
+</view>
   <view class = "row">
     <!-- <view>出发地</view> -->
     <van-button type="default" custom-class="buttonClass" bind:click="onClickDeparture">{{departure}}</van-button>

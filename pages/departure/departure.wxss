@@ -15,6 +15,7 @@
   /* justify-content: space-between */
   
 } 
+
 .toolBarClass{
   background: grey !important;
 }
@@ -27,11 +28,15 @@
 .popupClass{
   width: 600rpx !important;
 }
+.big{
+  font-size: 50rpx;
+}
 .row{
   display: flex;
   flex-direction: row;
   margin: 30rpx 30rpx 30rpx 30rpx;
-  align-items: center
+  align-items: center;
+  justify-content: center
 }
 .greyListContainer {
   border: 5rpx 5rpx 5rpx 5rpx;
