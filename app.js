@@ -9,7 +9,7 @@ App({
     name: null,
     contact: null,
     userID: 99,
-    urlbase: 'http://localhost:3000'
+    baseurl: 'http://localhost:3000'
   },
   onLaunch: function () {
     var logs = wx.getStorageSync('logs') || []
