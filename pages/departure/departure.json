@@ -9,7 +9,10 @@
     "van-button": "/dist/button/index",
     "van-toast": "/dist/toast/index",
     "van-action-sheet":"/dist/action-sheet/index",
-    "van-popup":"/dist/popup/index"
+    "van-popup":"/dist/popup/index",
+    "van-badge": "/dist/badge/index",
+    "van-badge-group": "/dist/badge-group/index",
+    "van-icon": "/dist/icon/index"
   },
   "navigationBarTitleText": "搜索",
   "navigationBarBackgroundColor": "#DC143C",

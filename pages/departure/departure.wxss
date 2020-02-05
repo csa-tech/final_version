@@ -67,3 +67,22 @@
   justify-content: flex-end;
 }
 
+.newRideTab{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-end;
+  margin:0rpx 40rpx 40rpx 0rpx;
+  padding: 5rpx 20rpx 15rpx 20rpx;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  
+}
+.newRideContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin:40rpx 0rpx 0rpx 0rpx;
+
+}
+

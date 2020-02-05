@@ -72,8 +72,8 @@
 </van-popup>
 <view class="actionButtonContainer">
   <van-button type="danger" bind:click ="onSearch" customer-class="buttonClass">搜索</van-button> 
-  <van-button type="primary" bind:click="onAddRide" customer-class="buttonClass" >添加行程</van-button>
 </view>
+
 
 <van-toast id="van-toast" /> 
 
@@ -101,3 +101,9 @@
   </navigator>
 </block>
 </block>
+
+<view class='newRideContainer'>
+  <navigator url="../newRide/newRide" class="newRideTab">
+<van-button round plain type="info">+ 发布</van-button>
+</navigator>
+</view>
