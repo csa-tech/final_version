@@ -9,7 +9,7 @@
   * [API](rideshare/references/api.md)
   * [Frontend Pages](rideshare/references/untitled.md)
   * [Dataflow](rideshare/references/dataflow.md)
-* [API Deployment](rideshare/api-deployment.md)
+* [API开发情况](rideshare/api-deployment.md)
 * [Resources](rideshare/resources-1/README.md)
   * [前端组件](rideshare/resources-1/qian-duan-zu-jian.md)
   * [常用数据](rideshare/resources-1/chang-yong-shu-ju.md)
@@ -21,7 +21,7 @@
 * [运行流程](csa-card/yun-hang-liu-cheng.md)
 * [数据库设计](csa-card/shu-ju-ku-she-ji.md)
 * [资料](csa-card/zi-liao/README.md)
-  * [数据库导入格式](csa-card/zi-liao/shu-ju-ku-dao-ru-ge-shi.md)
   * [云数据库示例代码](csa-card/zi-liao/shi-li-dai-ma.md)
+  * [数据库导入格式](csa-card/zi-liao/shu-ju-ku-dao-ru-ge-shi.md)
 * [TODO List](csa-card/todo-list.md)
 
