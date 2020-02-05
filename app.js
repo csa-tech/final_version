@@ -8,8 +8,7 @@ App({
     carType: null,
     name: null,
     contact: null,
-    userID: 99,
-    baseurl: 'http://localhost:3000'
+    userID: 99
   },
   onLaunch: function () {
     var logs = wx.getStorageSync('logs') || []
@@ -21,7 +20,7 @@ App({
         console.log(res)
         if (res.code) {
           wx.request({
-            url: this.globalData.baseurl + "/login",
+            url: "http://localhost:3000/login",
             data: res.code,
             method: 'GET',
             success: res => {

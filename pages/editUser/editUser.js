@@ -125,7 +125,7 @@ Page({
     app.globalData.avatar_url = $.data.avatar_url
     app.globalData.name = $.data.name
     wx.request({
-      url: this.globalData.baseurl + "/update-user?user_id=" + 202,//String(app.globalData.user_id),
+      url: "http://localhost:3000/update-user?user_id=" + 202,//String(app.globalData.user_id),
       method: 'post',
       data: {
         name: app.globalData.name,
