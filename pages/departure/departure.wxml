@@ -70,6 +70,7 @@
 <van-popup show="{{showTimePicker}}" overlay="true" bind:close="onCloseTimePicker" custom-class="popupClass">
 <van-datetime-picker type = 'date' value = '{{currentDate}}' min-date = "{{minDate}}" bind:input = "onInput" formatter = '{{formatter}}' confirm="onConfirm" cancel-button-text="" confirm-button-text="" show-toolbar= "true" visible-item-count = "3"/> 
 </van-popup>
+
 <view class="actionButtonContainer">
   <van-button type="danger" bind:click ="onSearch" customer-class="buttonClass">搜索</van-button> 
 </view>
