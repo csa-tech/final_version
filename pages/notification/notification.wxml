@@ -1,46 +1,23 @@
+<!--pages/notification/notification.wxml-->
 
 
-
-<scroll-view class = "page-body" scroll-y = "true">
-  <navigator wx:for = "{{notifications}}" wx:for-item = "i" url = "../application/application?id={{i.ride_id}}"> 
-    <view class = "item"> 
-      <image class = "page-photo" src = "{{i.ImageURL}}"> </image>
-      
-      <view class = "page-word">
-
-        <text class = "title">{{i.nick_name1}}</text>
-        <text class = "idNumber">{{"WeChat ID："+i.wechat_id}}</text>
-      </view>
-    </view>
-  </navigator>
-</scroll-view>
-
-
-
-<!-- <scroll-view class = "page-body" scroll-y = "true">
-  <navigator url="..">
-  </navigator>
-  <view class = "item"> 
-    <image class = "page-photo" src = "../image/icon.jpg"></image>
-    <view class = "page-word">
-
-      <text class = "title">{{"艾米emmy"}}</text>
-      <text class = "idNumber">{{"YJe5555"}}</text>
-    </view>
+<scroll-view class="page-body" scroll-y="true">
   
-  </view>
+  
+<block wx:for="{{notifications}}" wx:for-item="item" wx:for-index="idx">
+    
+<view wx:if="{{idx%2==0}}" class="greyListContainer">
+      <view class="divider"></view>
+      <view class="line"> 状态：{{item.status}}</view>
+      <view class='line'> 乘客数量: {{item.num_passenger}}</view>
+      <view class='line'> 备注：{{item.note}}</view>
+</view>
+<view wx:else class="whiteListContainer">
+      <view class="divider"></view>
+      <view class="line"> 状态：{{item.status}}</view>
+      <view class='line'> 乘客数量: {{item.num_passenger}}</view>
+      <view class='line'> 备注：{{item.note}}</view>
+</view>
 
-  <view class="item">
-    <image class = "page-photo" src = "../image/csa.png"></image>
-    <view class = "page-word">
-
-      <text class = "title">{{"CSA技术组"}}</text>
-      <text class = "idNumber">{{"1234567"}}</text>
-    </view>
-
-
-
-
-  </view>
- 
-</scroll-view> -->
+</block>
+</scroll-view>

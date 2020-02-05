@@ -1,26 +1,38 @@
-var API_URL = "";
+const app = getApp()
+console.log(app)
 
 Page({
   data: {
-    notifications:[]
+    notifications: []
   },
 
-  onLoad:function(){
+  onLoad: function () {
     var that = this;
-    wx.request({
-      url: "http://localhost:3000/view-my-pending-applications", //缺少消息的URL
-      data:{}, 
-      header:{
-        'content-type': 'application/json'
-      },
-      success:function(res){
-        
-        console.log(res.data); 
-        that.setData({
-          notifications: res.data
-        });
+    console.log(app.globalData.userID)
+    var baseUrl = "http://localhost:3000"
+    var user_id = app.globalData.userID
+    var URL = `${baseUrl}/view-my-pending-applications?user_id=${user_id}`
 
+    wx.request({
+      url: URL,
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data);
+        that.setData({
+          notifications: res.data.result
+        })
       }
     })
+  },
+
+  onChange(event){
+    wx.redirectTo({
+      url: '../application/application'
+    })
   }
-});
+
+})
+
