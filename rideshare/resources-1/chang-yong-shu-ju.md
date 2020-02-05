@@ -1,5 +1,11 @@
 # 常用数据
 
+启动后端的环境变量
+
+```text
+HOST='mydatabase.c9ukuxyqda4n.us-west-1.rds.amazonaws.com' USER='CSAUser' PASSWORD='***' npm start
+```
+
 #### 云服务器（AWS EC2 instance）地址
 
 ```text
