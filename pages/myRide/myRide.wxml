@@ -23,7 +23,6 @@
   <view class='line'> 目的地: {{item.destination}}</view>
 
   <view class='line'>出发日期：{{item.date}}</view>
-  <!-- <view class='line'> 出发时间：{{item.time}}</view> -->
   <view class='line'> 
     <text space="ensp">人数：{{item.num_approved}}/{{item.num_seat}}      </text>
     <image src="/images/myRide/me.png" wx:if="{{item.user_ID == user_ID}}" class="mine" class="image">我发布的           </image>   
@@ -42,7 +41,6 @@
   <view class='line' >目的地: {{item.destination}}</view>
 
   <view class='line'>出发日期：{{item.date}}</view>
-  <view class='line'> 出发时间：{{item.time}}</view>
   <view class='line'>
     <view ><text space="ensp">人数：{{item.num_approved}}/{{item.num_seat}}      </text>
     <image src="/images/me.png" wx:if="{{item.user_ID == user_ID}}" class="mine" class="image">我发布的           </image>   
