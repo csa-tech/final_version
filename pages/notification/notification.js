@@ -28,7 +28,7 @@ Page({
     })
   },
 
-  onChange(event){
+  onCheck(event){
     wx.redirectTo({
       url: '../application/application'
     })
