@@ -11,22 +11,13 @@
 .buttonClass{
   height: 20rpx;
   width: 320rpx;
-  margin: 30rpx 10rpx 10rpx 10rpx !important;
+  margin: 5rpx 10rpx 5rpx 10rpx !important;
   
 
   /* display: flex; */
   /* justify-content: space-between */
   
 } 
-
-.actionButtonContainer .buttonClass{ 
-  height: 20rpx;
-  /*width: 320rpx;*/
-  /*margin: 30rpx 10rpx 10rpx 10rpx !important;*/
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 
 .toolBarClass{
   background: grey !important;
@@ -76,10 +67,12 @@
 .actionButtonContainer{
   display: flex;
   flex-direction: column-reverse;
-  justify-content: flex-end;
+  /*justify-content: flex-end;*/
   margin-left: auto; 
   margin-right: auto; 
-  width:30%;
+  width:100%;
+  align-items: center;
+  justify-content: center;
   
 }
 

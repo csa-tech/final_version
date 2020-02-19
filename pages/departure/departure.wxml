@@ -72,7 +72,7 @@
 </van-popup>
 
 <view class="actionButtonContainer">
-  <van-button type="danger" bind:click ="onSearch" customer-class="buttonClass">搜索</van-button> 
+  <van-button type="danger" bind:click ="onSearch" >搜索</van-button> 
 </view>
 
 
