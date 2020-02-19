@@ -5,7 +5,8 @@ Page({
     motto: 'Hello Mira',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    show: false
   },
   //事件处理函数
   bindViewTap: function () {
@@ -45,5 +46,17 @@ Page({
     wx.navigateTo({
       url: '../newApplication/newApplication?ride='+ this.data.ride_id,
     })
+  },
+
+  showPopup() {
+    this.setData({ show: true });
+  },
+
+  onClose() {
+    this.setData({ show: false });
+  },
+
+  onChange(event) {
+    console.log(event.detail);
   }
-})
+});

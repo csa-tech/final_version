@@ -24,3 +24,7 @@
 .section {
   align-items: center;
 }
+
+.popupClass {
+  padding: 25px;
+}

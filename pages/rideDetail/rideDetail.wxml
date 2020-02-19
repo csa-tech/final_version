@@ -21,5 +21,34 @@
 <text>{{ride.num_seat - ride.num_approved}}</text>
 
 <button bindtap="setDisabled">加入Ride</button>
+<van-cell title="详情信息" is-link bind:click="showPopup" />
+
+<van-popup
+  show="{{ show }}"
+  closeable
+  position="bottom"
+  custom-style="height: 50%"
+  custom-class="popupClass"
+  bind:close="onClose"
+>
+乘坐人数
+<van-stepper value="{{ 1 }}" step="1" class="stepperclass"/>
+留言
+<van-cell-group>
+  <van-field
+   value="{{ message }}"
+    
+    type="textarea"
+    placeholder="请输入留言"
+    autosize
+    border="{{ false }}"
+  />
+<van-button bindtap="setDisabled">加入Ride</van-button>
+</van-cell-group>
+</van-popup>
+
+<!-- <van-stepper value="{{ 1 }}" step="1" /> -->
+
+
 
 </view>
