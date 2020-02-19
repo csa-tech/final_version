@@ -4,6 +4,8 @@
  "navigationBarTextStyle": "white",
  "usingComponents":{
    "van-badge": "/dist/badge/index",
-   "van-badge-group": "/dist/badge-group/index"
+   "van-badge-group": "/dist/badge-group/index",
+   "van-button": "/dist/button/index",
+   "van-icon": "/dist/icon/index"
  }
 }

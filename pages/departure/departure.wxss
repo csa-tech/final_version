@@ -5,32 +5,34 @@
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 30rpx 30rpx 30rpx 30rpx
+  margin: 30rpx 30rpx 30rpx 30rpx;
 }
+
 .buttonClass{
   height: 20rpx;
   width: 320rpx;
-  margin: 30rpx 10rpx 10rpx 10rpx !important;
-  /* display: flex; */
-  /* justify-content: space-between */
-  
+  margin: 5rpx 10rpx 5rpx 10rpx !important;
 } 
 
 .toolBarClass{
   background: grey !important;
 }
+
 .pickerClass{
   padding: 0px 0px 0px 0px !important;
   margin: 0px 0px 0px 0px !important;
   border: 0px 0px 0px 0px !important;
   height:450rpx; 
 }
+
 .popupClass{
   width: 600rpx !important;
 }
+
 .big{
   font-size: 50rpx;
 }
+
 .row{
   display: flex;
   flex-direction: row;
@@ -38,6 +40,7 @@
   align-items: center;
   justify-content: center
 }
+
 .greyListContainer {
   border: 5rpx 5rpx 5rpx 5rpx;
   border-color: grey;
@@ -45,6 +48,7 @@
   background-color:gainsboro;
   padding:10rpx 0rpx 10rpx 80rpx
 }
+
 .whiteListContainer {
   border: 5rpx 5rpx 5rpx 5rpx;
   border-color: grey;
@@ -53,17 +57,38 @@
   padding:10rpx 0rpx 10rpx 80rpx
 }
 
-
 .line{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   margin:0rpx 0rpx 0rpx 50rpx;
-  
 }
+
 .actionButtonContainer{
   display: flex;
   flex-direction: column-reverse;
+  margin-left: auto; 
+  margin-right: auto; 
+  width:100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.newRideTab{
+  display:flex;
+  flex-direction:row;
   justify-content: flex-end;
+  margin:0rpx 40rpx 40rpx 0rpx;
+  padding: 5rpx 20rpx 15rpx 20rpx;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.newRideContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin:40rpx 0rpx 0rpx 0rpx;
 }
 

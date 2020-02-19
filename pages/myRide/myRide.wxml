@@ -56,4 +56,12 @@
 </view>
 
 </block>
-<view class='newRideContainer'><navigator url="../newRide/newRide" class="newRideTab">创建行程</navigator></view>
+
+
+<view class='newRideContainer'>
+<navigator url="../newRide/newRide" class="newRideTab">
+<van-button round plain type="info">+ 发布</van-button>
+</navigator>
+</view>
+
+<!--class='newRideContainer', class="newRideTab"-->
