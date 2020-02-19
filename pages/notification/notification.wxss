@@ -4,7 +4,7 @@
   border-color: grey;
   margin:5rpx 0rpx 0rpx 0rpx;
   background-color:gainsboro;
-  padding:5rpx 20rpx 15rpx 20rpx
+  padding:5rpx 20rpx 15rpx 10rpx
 
 }
 .whiteListContainer {
@@ -12,11 +12,11 @@
   border-color: grey;
   margin:5rpx 0rpx 0rpx 0rpx;
   background-color:white;
-  padding:5rpx 20rpx 15rpx 20rpx;
+  padding:5rpx 20rpx 15rpx 10rpx;
   
 }
 .line{
-  margin:0rpx 0rpx 0rpx 150rpx;
+  margin:0rpx 0rpx 0rpx 100rpx;
 }
 .buttonContainerClass{
   display:flex;

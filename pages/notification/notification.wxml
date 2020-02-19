@@ -4,17 +4,18 @@
 <block wx:for="{{notifications}}" wx:for-item="item" wx:for-index="idx">
     
 <navigator wx:if="{{idx%2==0}}" url="../application/application?ride_id={{item.ride_id}}" class='greyListContainer'>
-      <view class="divider"></view>
-      <view class="line"> 状态：{{item.status}}</view>
-      <view class='line'> 乘客数量: {{item.num_passenger}}</view>
-      <view class='line'> 备注：{{item.note}}</view>
+  <view class="divider"></view>
+  <view class="line"> 状态：{{item.status}}</view>
+  <view class='line'> 乘客数量: {{item.num_passenger}}</view>
+  <view class='line'> 备注：{{item.note}}</view>
 </navigator>
+
 <navigator wx:else url="../application/application?ride_id={{item.ride_id}}"
 class='whiteListContainer'>
-      <view class="divider"></view>
-      <view class="line"> 状态：{{item.status}}</view>
-      <view class='line'> 乘客数量: {{item.num_passenger}}</view>
-      <view class='line'> 备注：{{item.note}}</view>
+  <view class="divider"></view>
+  <view class="line"> 状态：{{item.status}}</view>
+  <view class='line'> 乘客数量: {{item.num_passenger}}</view>
+  <view class='line'> 备注：{{item.note}}</view>
 </navigator>
 
 </block>

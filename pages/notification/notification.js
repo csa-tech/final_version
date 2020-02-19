@@ -26,12 +26,6 @@ Page({
         })
       }
     })
-  },
-
-  onCheck(event){
-    wx.redirectTo({
-      url: '../application/application'
-    })
   }
 
 })
