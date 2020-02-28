@@ -88,7 +88,8 @@ Page({
     var pri=this.data.price
 
     wx.request({
-      url: this.globalData.baseurl+'/create-application',
+      url: getApp().globalData.baseurl+'/create-ride',
+      method: 'POST',
       data:{
         //ride_id:'321',
         approved_people:people_nu,
