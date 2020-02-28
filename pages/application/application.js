@@ -8,8 +8,10 @@ Page({
 
   acceptFunc: function (e) {
     console.log("已接受");
+    console.log(globalData.baseurl);
     wx.request({
-      url: "http://localhost:3000/accept-application?user_id="+ String(this.data.decision.ride_id),
+      url: getApp().globalData.baseurl + "/accept-application?user_id="+ String      (this.data.decision.ride_id),
+
       //parameters = id
       //method: 'PUT',
       data: {

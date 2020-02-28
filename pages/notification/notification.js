@@ -14,10 +14,11 @@ Page({
     var URL = `${baseUrl}/view-my-pending-applications?user_id=${user_id}`
 
     wx.request({
-      url: URL,
-      data: {},
-      header: {
-        'content-type': 'application/json' // 默认值
+      url: getApp().globalData.baseurl+"/view-my-pending-applications", //缺少消息的URL
+      data:{}, 
+      header:{
+        'content-type': 'application/json'
+
       },
       success: function (res) {
         console.log(res.data);
