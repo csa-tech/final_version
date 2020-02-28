@@ -90,6 +90,7 @@ Page({
     wx.request({
       url: getApp().globalData.baseurl+'/create-ride',
       method: 'POST',
+
       data:{
         //ride_id:'321',
         approved_people:people_nu,

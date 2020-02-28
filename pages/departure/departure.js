@@ -101,6 +101,9 @@ Page({
     
     if(this.data.departure != this.data.destination){
       var that = this;
+
+      var baseUrl = "http://localhost:3000"
+
       var departure = this.data.departure
       var destination = this.data.destination
       var year = this.data.year

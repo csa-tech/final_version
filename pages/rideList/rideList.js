@@ -23,7 +23,9 @@ Page({
     })
     wx.request({
       // url: "http://13.56.241.40:3033/ridelist?departure="+that.data.departure+"&destination="+that.data.destination+"&date=" + this.data.date, 
+
       url: getApp().globalData.baseurl+"/view-rides",
+
 
       data: {},
       header: {

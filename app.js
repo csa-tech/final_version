@@ -22,6 +22,7 @@ App({
         if (res.code) {
           wx.request({
             url: this.globalData.baseurl + '/login',
+
             data: res.code,
             method: 'GET',
             success: res => {

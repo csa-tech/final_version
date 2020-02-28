@@ -11,6 +11,7 @@ Page({
     console.log(globalData.baseurl);
     wx.request({
       url: getApp().globalData.baseurl + "/accept-application?user_id="+ String      (this.data.decision.ride_id),
+
       //parameters = id
       //method: 'PUT',
       data: {
@@ -34,7 +35,7 @@ Page({
     console.log("已拒绝");
     
     wx.request({
-      url: this.globalData.baseurl + "/deny-application?user_id=" + String        (this.data.decision.ride_id),
+      url: "http://localhost:3000/deny-application?user_id=" + String(this.data.decision.ride_id),
       //parameters = id
       //method: 'PUT',
       data:{
@@ -57,7 +58,7 @@ Page({
     console.log(parameters);
 
     wx.request({
-      url: this.globalData.baseurl + "/view-application?user_ID="+String       (parameters.id),
+      url: "http://localhost:3000/view-application?user_ID="+String(parameters.id),
       //parameters = id
       data:{},
       header:{

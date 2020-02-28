@@ -126,6 +126,7 @@ Page({
     app.globalData.name = $.data.name
     wx.request({
       url: getApp().globalData.baseurl + "/update-user?user_id=" + 202,//String(app.globalData.user_id),
+
       method: 'post',
       data: {
         name: app.globalData.name,

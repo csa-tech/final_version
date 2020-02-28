@@ -18,6 +18,7 @@ Page({
     var $ = this;
     wx.request({
       url: getApp().globalData.baseurl + "/view-user?user_id=" + 202,//String(app.globalData.userID),
+
       method: 'get',
       success: function (res) {
         var avatar_url = res.data.avatar_url;

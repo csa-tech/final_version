@@ -48,6 +48,7 @@ Page({
   submit: function(e){
     wx.request({
       url: getApp().globalData.baseurl+"/create-application", //这里缺少一个post的URL，无法上传数据
+
       method : "POST",
       data:{
         pick : this.data.pick,
