@@ -1,28 +1,33 @@
 <view class="margin">
-<view style="margin-top: 40px;">司机姓名</view>
-<text>{{ride.driver.name}}</text>
+<view class="detailPage">
+  <view style="margin-top: 40px;">司机姓名</view>
+  <text>{{ride.driver.name}}</text>
 
-<!-- <view style="margin-top: 40px;">车辆车型</view>
-<text>{{cartype}}</text> -->
+  <!-- <view style="margin-top: 40px;">车辆车型</view>
+  <text>{{cartype}}</text> -->
 
-<view style="margin-top: 40px;">司机起点</view>
-<text>{{ride.departure}}</text>
+  <view style="margin-top: 40px;">司机起点</view>
+  <text>{{ride.departure}}</text>
 
-<!-- <view style="margin-top: 40px;">司机出发时间</view>
-<text>{{starttime}}</text> -->
+  <!-- <view style="margin-top: 40px;">司机出发时间</view>
+  <text>{{starttime}}</text> -->
 
-<view style="margin-top: 40px;">司机终点</view>
-<text>{{ride.destination}}</text>
+  <view style="margin-top: 40px;">司机终点</view>
+  <text>{{ride.destination}}</text>
 
-<view style="margin-top: 40px;">价格每人</view>
-<text>{{ride.price}}</text>
+  <view style="margin-top: 40px;">价格每人</view>
+  <text>{{ride.price}}</text>
 
-<view style="margin-top: 40px;">剩余车上座位数</view>
-<text>{{ride.num_seat - ride.num_approved}}</text>
+  <view style="margin-top: 40px;">剩余车上座位数</view>
+  <text>{{ride.num_seat - ride.num_approved}}</text>
 
-<button bindtap="setDisabled">加入Ride</button>
-<van-cell title="详情信息" is-link bind:click="showPopup" />
+<!-- <button bindtap="setDisabled">加入Ride</button> -->
+  <view>
+  <van-button type="danger" color="#ff0000" size="large" is-link bind:click="showPopup" block>加入</van-button>
 
+  </view>
+<!-- <van-cell title="详情信息" is-link bind:click="showPopup" /> -->
+</view>
 <van-popup
   show="{{ show }}"
   closeable
@@ -31,24 +36,24 @@
   custom-class="popupClass"
   bind:close="onClose"
 >
+<view class="info1">
 乘坐人数
-<van-stepper value="{{ 1 }}" step="1" class="stepperclass"/>
+<van-stepper value="{{ 1 }}" bind:change="onChangeNumPeople" step="1" class="stepperclass"/>
+</view>
+<view class="info2">
 留言
-<van-cell-group>
+<van-cell-group class="comments">
   <van-field
    value="{{ message }}"
-    
     type="textarea"
     placeholder="请输入留言"
     autosize
     border="{{ false }}"
+    bind:change="onChangeNotes"
   />
-<van-button bindtap="setDisabled">加入Ride</van-button>
 </van-cell-group>
+</view>
+<van-button type="danger" color="#ff0000" bindtap="join" plain>加入Ride</van-button>
 </van-popup>
-
-<!-- <van-stepper value="{{ 1 }}" step="1" /> -->
-
-
 
 </view>
