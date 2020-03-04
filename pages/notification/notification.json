@@ -1,7 +1,7 @@
 {
-  "component":true,
-  "usingComponents":{
-
+    "component": true,
+    "usingComponents": {
+    "van-button": "/dist/button/index"
   },
   "navigationBarBackgroundColor": "#DC143C",
   "navigationBarTitleText":"消息",

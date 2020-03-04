@@ -96,15 +96,20 @@ Page({
     console.log(currentDate)
   },
   onSearch(){
+    console.log(this);
+    var baseurl = getApp().globalData.baseurl;
+    
     if(this.data.departure != this.data.destination){
       var that = this;
+
       var baseUrl = "http://localhost:3000"
+
       var departure = this.data.departure
       var destination = this.data.destination
       var year = this.data.year
       var month = this.data.month
       var day = this.data.day
-      var URL = `${baseUrl}/view-rides?departure=${departure}&destination=${destination}&date=${month}/${day}/${year}`
+      var URL = `${baseurl}/view-rides?departure=${departure}&destination=${destination}&date=${month}/${day}/${year}`
       wx.request({
         // url: "http://13.56.241.40:3033/ridelist?departure="+that.data.departure+"&destination="+that.data.destination+"&date=" + this.data.date, 
         url: URL,

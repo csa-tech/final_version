@@ -50,17 +50,23 @@
   flex-direction:row;
   justify-content: flex-end;
   margin:0rpx 40rpx 40rpx 0rpx;
-  padding: 15rpx 20rpx 15rpx 20rpx;
-  color: red;
-  border:3rpx solid red;
+  padding: 5rpx 20rpx 15rpx 20rpx;
+  
   
 }
 .newRideContainer{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin:40rpx 0rpx 0rpx 0rpx
+  margin:40rpx 0rpx 0rpx 0rpx;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
 }
+
+
+
 .bellIcon{
   width:50rpx;
   height:50rpx;
