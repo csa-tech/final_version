@@ -72,7 +72,8 @@
 </van-popup>
 
 <view class="actionButtonContainer">
-  <van-button type="danger" bind:click ="onSearch" >搜索</van-button> 
+  <van-button type="danger" bind:click ="onSearch" customer-class="buttonClass" class="searchButton">搜索</van-button> 
+  <van-button type="primary" bind:click="onAddRide" customer-class="buttonClass" >添加行程</van-button>
 </view>
 
 
