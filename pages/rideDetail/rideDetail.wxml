@@ -1,25 +1,25 @@
 <view class="margin">
-<view style="margin-top: 40px;">司机姓名</view>
-<text>{{ride.driver.name}}</text>
 
-<!-- <view style="margin-top: 40px;">车辆车型</view>
-<text>{{cartype}}</text> -->
+<view class="block">
+  <text class="location">{{ride.departure}}\n</text>
+  <text style="font-size:40px;">↓\n</text>
+  <text class="location">{{ride.destination}}\n</text>
+  <view style="margin-top: 20px;">
+    <van-row>
+      <van-col span="21"> <text>{{ride.date}}</text></van-col>
+      <van-col span="3"><text>${{ride.price}}</text> </van-col>
+    </van-row>
+  </view>
+</view>
 
-<view style="margin-top: 40px;">司机起点</view>
-<text>{{ride.departure}}</text>
+<view style="margin-left: 20px;">
+  <view style="margin-top: 30px;">司机: {{ride.driver.name}}</view>
+  <view style="margin-top: 10px;">电话: {{ride.driver.contact}}</view>
+  <view style="margin-top: 10px;">备注: {{ride.note}}</view>
+</view>
 
-<!-- <view style="margin-top: 40px;">司机出发时间</view>
-<text>{{starttime}}</text> -->
-
-<view style="margin-top: 40px;">司机终点</view>
-<text>{{ride.destination}}</text>
-
-<view style="margin-top: 40px;">价格每人</view>
-<text>{{ride.price}}</text>
-
-<view style="margin-top: 40px;">剩余车上座位数</view>
-<text>{{ride.num_seat - ride.num_approved}}</text>
-
-<button bindtap="setDisabled">加入Ride</button>
+<view class="cancelButton">
+<van-button round plain type="info" bindtap="setDisabled" icon="close">Cancel</van-button>
+</view>
 
 </view>

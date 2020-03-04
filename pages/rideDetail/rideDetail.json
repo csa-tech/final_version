@@ -1,3 +1,10 @@
 {
-  "navigationBarTitleText": "搭车详情"
+  "navigationBarTitleText": "搭车详情",
+  "component":true,
+  "usingComponents": {
+    "van-icon": "/dist/icon/index",
+    "van-row": "/dist/row/index",
+    "van-col": "/dist/col/index",
+    "van-button": "/dist/button/index"
+  }
 }
